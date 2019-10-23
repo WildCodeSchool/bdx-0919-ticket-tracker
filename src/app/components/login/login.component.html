@@ -1,9 +1,12 @@
 <div class="containerHTML">
   <form class="example-form">
-    <mat-form-field>
-      <input matInput placeholder="Name" value="">
-    </mat-form-field>
-    <div>
+    <div class="div-name">
+      <mat-form-field>
+        <input matInput placeholder="Name" value="">
+      </mat-form-field>
+   </div>
+
+    <div class="div-choice">
       <mat-form-field>
         <mat-label>Choix</mat-label>
         <mat-select>
@@ -13,6 +16,7 @@
         </mat-select>
       </mat-form-field>
     </div>
+
     <div class="div-password">
       <mat-form-field>
         <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">

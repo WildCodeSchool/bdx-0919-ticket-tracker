@@ -2,15 +2,23 @@
   border:2px solid red;
   width:30%;
   height:40%;
+  background-color: #f9f9f9;
+  position: absolute;
 }
-
+.div-name > * {
+  border:1px solid red;
+  width:50%;
+}
+.div-choice > *{
+  width: 50%;
+}
 .div-password {
   display: flex;
   flex-direction: column;
 }
 
 .div-password > * {
-  width: 80%;
+  width: 50%;
 }
 
 .example-right-align {
