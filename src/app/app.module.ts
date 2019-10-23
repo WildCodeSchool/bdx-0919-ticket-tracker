@@ -13,6 +13,7 @@ import { UserComponent } from "./pages/user/user.component";
 import { AvatarComponent } from "./pages/user/avatar/avatar.component";
 import { TabComponent } from "./pages/user/tab/tab.component";
 import { TicketListComponent } from "./components/ticket-list/ticket-list.component";
+import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TicketListComponent } from "./components/ticket-list/ticket-list.compon
     UserComponent,
     AvatarComponent,
     TabComponent,
-    TicketListComponent
+    TicketListComponent,
+    FormComponent
   ],
 
   imports: [
