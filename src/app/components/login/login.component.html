@@ -1,0 +1,36 @@
+<h2>Login</h2>
+
+
+<form class="example-form">
+  <mat-form-field>
+    <input matInput placeholder="Name" value="">
+  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <mat-label>Choix</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let select of selects" [value]="select.value">
+          {{select.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</form>
+
+ <div class="button">
+  <button mat-flat-button color="Connexion">Connexion</button>
+</div>
+
+
+
+
+
+
