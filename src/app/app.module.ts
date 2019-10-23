@@ -9,9 +9,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { TicketComponent } from './components/ticket/ticket.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent,TicketComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +21,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatSliderModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

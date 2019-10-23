@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import { TicketComponent } from './ticket/ticket.component';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TicketComponent, MatCardModule],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatCardModule
+    ]
 })
 export class ComponentsModule { }
