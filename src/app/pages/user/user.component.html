@@ -1,1 +1,12 @@
-<p>user works!</p>
+<div class="container">
+  <div class="presentation-user">
+    <img class="avatar" [src]="mary.avatar" alt="avatar" />
+    <div class="text-user">
+      <h2 class="user-name">
+        {{ mary.firstName }} {{ mary.lastName | uppercase }}
+      </h2>
+      <button mat-button>Create a ticket</button>
+    </div>
+  </div>
+  <div></div>
+</div>

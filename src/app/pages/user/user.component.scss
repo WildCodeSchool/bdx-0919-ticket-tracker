@@ -1,0 +1,34 @@
+body {
+  width: 100%;
+  height: 100%;
+  color: #3b424e;
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.presentation-user {
+  margin-top: 32px;
+  display: flex;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user-name {
+  margin-left: 16px;
+}
+
+.text-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
