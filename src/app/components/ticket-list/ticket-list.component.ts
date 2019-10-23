@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketListComponent implements OnInit {
 
+  tickets: Ticket[];
   constructor() { }
 
   ngOnInit() {
