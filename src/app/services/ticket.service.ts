@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class TicketService {
-  static URL = "https://wild-api.witpoc.com/tickets";
+  static URL = 'https://wild-api.witpoc.com/tickets';
 
   constructor(private http: HttpClient) {}
 
@@ -14,6 +14,6 @@ export class TicketService {
   }
 
   getById(id: number) {
-    return this.http.get(TicketService.URL + "/" + id);
+    return this.http.get(TicketService.URL + '/' + id);
   }
 }
