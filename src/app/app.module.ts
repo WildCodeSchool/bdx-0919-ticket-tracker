@@ -11,6 +11,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { UserComponent } from "./pages/user/user.component";
 import { AvatarComponent } from "./pages/user/avatar/avatar.component";
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, UserComponent, AvatarComponent],
   imports: [
