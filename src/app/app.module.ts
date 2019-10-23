@@ -11,10 +11,19 @@ import { HomeComponent } from "./pages/home/home.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { UserComponent } from "./pages/user/user.component";
 import { AvatarComponent } from "./pages/user/avatar/avatar.component";
-import { TabComponent } from './pages/user/tab/tab.component';
+import { TabComponent } from "./pages/user/tab/tab.component";
+import { TicketListComponent } from "./components/ticket-list/ticket-list.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserComponent, AvatarComponent, TabComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserComponent,
+    AvatarComponent,
+    TabComponent,
+    TicketListComponent
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
