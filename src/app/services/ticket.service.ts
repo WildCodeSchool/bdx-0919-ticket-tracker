@@ -11,23 +11,23 @@ export class TicketService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Ticket[]> {
+  public getAll(): Observable<Ticket[]> {
     return this.http
       .get(TicketService.URL)
-      .pipe(map(this.convertDataFromServerToTicket));
+      .pipe(map(this.convertDataFromServerToTickets));
   }
 
-  getById(id: number) {
+  public getById(id: number) {
     return this.http
       .get(TicketService.URL + "/" + id)
-      .pipe(map(this.convertDataFromServerToTicket));
+      .pipe(map(this.convertDataFromServerToTickets));
   }
 
-  addTicket(ticket: Ticket): Observable<any> {
+  public addTicket(ticket: Ticket): Observable<any> {
     return this.http.post(TicketService.URL, ticket);
   }
 
-  private convertDataFromServerToTicket(tickets: any[]): Ticket[] {
+  private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
     return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
