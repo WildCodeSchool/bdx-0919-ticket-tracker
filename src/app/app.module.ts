@@ -18,7 +18,12 @@ import { TabComponent } from './pages/user/tab/tab.component';
 import { TicketListComponent } from './components/ticket-list/ticket-list.component';
 import { FormComponent } from './pages/form/form.component';
 
-@NgModule({
+
+
+
+
+
+@NgModule ({
   declarations: [
     AppComponent,
     HomeComponent,
