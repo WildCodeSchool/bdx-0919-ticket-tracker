@@ -1,6 +1,6 @@
 // Container générale
 .containerHTML{
-  border:2px solid red;
+
   width:30vw;
   height:40vh;
   background-color: #f9f9f9;
@@ -8,11 +8,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px ;
+  border:3px  #3B424E;
+  -webkit-border-radius: 10px ;
+  -moz-border-radius: 10px ;
+  -ms-border-radius: 10px ;
+  -o-border-radius: 10px ;
+  background-color: #F9F9F9;
+  box-shadow: 6px 6px 6px #C8C8C8;
+
 }
 
 // Div Name
+
 .div-name > * {
-  border:1px solid red;
+
   width:100%;
 
 // Div Choice
@@ -25,7 +35,10 @@
 .div-password {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
+
 }
+
 
 .div-password > * {
   width: 100%;
@@ -46,5 +59,7 @@ input.example-right-align {
 
 // button
 .mat-flat-button {
-  background-color:#f76c6c
+  background-color:#f76c6c;
+  color: #f9f9f9;
+
 }
