@@ -1,24 +1,34 @@
+// Container générale
 .containerHTML{
   border:2px solid red;
-  width:30%;
-  height:40%;
+  width:30vw;
+  height:40vh;
   background-color: #f9f9f9;
-  position: absolute;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+// Div Name
 .div-name > * {
   border:1px solid red;
-  width:50%;
+  width:100%;
+
+// Div Choice
 }
 .div-choice > *{
-  width: 50%;
+  width: 100%;
 }
+
+//Div password
 .div-password {
   display: flex;
   flex-direction: column;
 }
 
 .div-password > * {
-  width: 50%;
+  width: 100%;
 }
 
 .example-right-align {
@@ -32,4 +42,9 @@ input.example-right-align::-webkit-inner-spin-button {
 
 input.example-right-align {
   -moz-appearance: textfield;
+}
+
+// button
+.mat-flat-button {
+  background-color:#f76c6c
 }
