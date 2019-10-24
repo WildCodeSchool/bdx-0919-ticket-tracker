@@ -9,6 +9,7 @@ import { TicketService } from "src/app/services/ticket.service";
 })
 export class TicketListComponent implements OnInit {
   tickets: Ticket[];
+  newTicket: Ticket;
 
   constructor(private ticketService: TicketService) {}
 
@@ -16,5 +17,8 @@ export class TicketListComponent implements OnInit {
     this.ticketService.getAll().subscribe((tickets) => {
       this.tickets = tickets;
     });
+    this.ticketService
+      .addTicket(this.newTicket)
+      .subscribe((ticket) => this.tickets.push(ticket));
   }
 }
