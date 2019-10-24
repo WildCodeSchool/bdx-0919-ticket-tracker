@@ -1,20 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { TicketComponent } from './ticket/ticket.component';
-
-
-
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
-  declarations: [TicketComponent],
-  imports: [
-    CommonModule,
-    MatCardModule
-
-  ],
-
+  declarations: [],
+  imports: [CommonModule, MatCardModule]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}
