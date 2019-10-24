@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-@Component({
+
+@Component ({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
