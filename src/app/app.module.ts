@@ -1,28 +1,31 @@
-import { TabComponent } from './pages/user/tab/tab.component';
-import { AvatarComponent } from './pages/user/avatar/avatar.component';
-import { UserComponent } from './pages/user/user.component';
+
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSliderModule } from '@angular/material/slider';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { LoginComponent } from './components/login/login.component';
+import { ComponentsModule } from './components/components.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ComponentsModule } from './components/components.module';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserComponent } from './pages/user/user.component';
+import { AvatarComponent } from './pages/user/avatar/avatar.component';
+import { TabComponent } from './pages/user/tab/tab.component';
+import { TicketListComponent } from './components/ticket-list/ticket-list.component';
+import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, UserComponent, AvatarComponent, TabComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, UserComponent, AvatarComponent, TabComponent, TicketListComponent,
+    FormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSliderModule,
     MatCardModule,
     MatButtonModule,
+
     HttpClientModule,
     ComponentsModule,
     MatSelectModule,
