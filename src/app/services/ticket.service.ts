@@ -12,16 +12,24 @@ export class TicketService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Ticket[]> {
-    return this.http.get(TicketService.URL).pipe(
-      map((tickets: any[]) => {
-        return tickets.map((ticket) => {
-          return new Ticket(ticket);
-        });
-      })
-    );
+    return this.http
+      .get(TicketService.URL)
+      .pipe(map(this.convertDataFromServerToTicket));
   }
 
   getById(id: number) {
-    return this.http.get(TicketService.URL + "/" + id);
+    return this.http
+      .get(TicketService.URL + "/" + id)
+      .pipe(map(this.convertDataFromServerToTicket));
+  }
+
+  addTicket(ticket: Ticket): Observable<any> {
+    return this.http.post(TicketService.URL, ticket);
+  }
+
+  private convertDataFromServerToTicket(tickets: any[]): Ticket[] {
+    return tickets.map((ticket) => {
+      return new Ticket(ticket);
+    });
   }
 }
