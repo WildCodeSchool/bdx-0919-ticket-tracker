@@ -6,6 +6,7 @@ import { TicketComponent } from './ticket/ticket.component';
 
 
 
+
 @NgModule({
   declarations: [TicketComponent, MatCardModule],
   imports: [
