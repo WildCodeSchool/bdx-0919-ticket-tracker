@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+
 
 export interface Select {
   value: string;
@@ -11,6 +12,9 @@ export interface Select {
 })
 export class LoginComponent implements OnInit {
 
+  @Input () isModalVisible: boolean;
+
+
 
   public selects: Select[] = [
     {value: 'student', viewValue: 'Campus Manager'},
@@ -18,13 +22,15 @@ export class LoginComponent implements OnInit {
     {value: 'teacher', viewValue: 'Étudiant'}
   ];
 
-  hide: boolean = true;
+  hide = true;
 
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
+  nothing() {}
+
 
 
 }

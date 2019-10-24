@@ -1,3 +1,6 @@
+import { TabComponent } from './pages/user/tab/tab.component';
+import { AvatarComponent } from './pages/user/avatar/avatar.component';
+import { UserComponent } from './pages/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,14 +15,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ComponentsModule } from './components/components.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, UserComponent, AvatarComponent, TabComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +36,6 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

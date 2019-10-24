@@ -9,9 +9,10 @@ import { TicketComponent } from './ticket/ticket.component';
 
 
 @NgModule({
-  declarations: [TicketComponent, MatCardModule],
+  declarations: [TicketComponent],
   imports: [
     CommonModule,
+    MatCardModule
 
   ],
 
