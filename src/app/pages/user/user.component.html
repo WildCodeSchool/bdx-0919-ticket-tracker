@@ -5,7 +5,7 @@
       <h2 class="user-name">
         {{ mary.firstName }} {{ mary.lastName | uppercase }}
       </h2>
-      <button mat-button>Créer un ticket</button>
+      <button [routerLink]="['/form']" routerLinkActive="router-link-active"  mat-button>Créer un ticket</button>
     </div>
   </div>
   <app-tab [user]="mary"></app-tab>
