@@ -1,0 +1,29 @@
+.home{
+  margin-top: 15vh;
+}
+
+@media screen and (min-width: 1500px) {
+  .home{
+    margin-top: 0;
+  }
+}
+img{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title{
+  height: 15vw;
+  min-height: 80px;
+}
+.help{
+  height: 30vw;
+  min-height: 250px;
+}
+button{
+  color: #f9f9f9;
+  background-color: #f76c6c;
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+}
