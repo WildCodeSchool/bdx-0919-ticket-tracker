@@ -1,15 +1,19 @@
 <form>
-  <div class="example-container">
+  <div class="example-container boxForm">
     <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput placeholder="Textarea"></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="Select">
-        <mat-option value="option">Option</mat-option>
+      <mat-select placeholder="Destinataire">
+        <mat-option value="Prof">Professeur</mat-option>
+        <mat-option value="Admin">Campus manageur</mat-option>
+        <mat-option value="All">Tous</mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sujet">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Ticket"></textarea>
+    </mat-form-field>
+    <button mat-flat-button color="Connexion">Connexion</button>
+
   </div>
 </form>
