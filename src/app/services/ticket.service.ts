@@ -32,4 +32,6 @@ export class TicketService {
       return new Ticket(ticket);
     });
   }
+
+  private concertTicketToData() {}
 }

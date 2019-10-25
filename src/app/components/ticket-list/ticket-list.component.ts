@@ -8,8 +8,25 @@ import { TicketService } from "src/app/services/ticket.service";
   styleUrls: ["./ticket-list.component.scss"]
 })
 export class TicketListComponent implements OnInit {
-  tickets: Ticket[];
   newTicket: Ticket;
+
+  tickets: Ticket[] = [
+    {
+      id: 1,
+      title: "Bloqué sur AngularMaterial",
+      description:
+        "J'ai initié un projet en utilisant Angular Material.Quand j'essaie de créer un avavar, cela ne fonctionne pas.",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      id: 2,
+      title: "Plus de papier toilette",
+      description: "En galère",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+  ];
 
   constructor(private ticketService: TicketService) {}
 
