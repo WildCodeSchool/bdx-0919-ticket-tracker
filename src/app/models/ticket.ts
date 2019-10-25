@@ -1,5 +1,5 @@
 export class Ticket {
-  public id: number;
+  public id?: number;
   public title: string;
   public description: string;
   public createdAt: Date;
