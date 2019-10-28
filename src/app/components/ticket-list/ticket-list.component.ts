@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/models/ticket';
+import { TicketService } from '../../services/ticket.service';
 
 @Component ({
   selector: 'app-ticket-list',
@@ -12,7 +13,7 @@ export class TicketListComponent implements OnInit {
       id: 1,
       title: "Bloqué sur AngularMaterial",
       description:
-        "J'ai initié un projet en utilisant Angular Material.Quand j'essaie de créer un avavar, cela ne fonctionne pas.",
+        "J'ai initié un projet en utilisant Angular Material.Quand j'essaie de créer un avatar, cela ne fonctionne pas.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -25,7 +26,8 @@ export class TicketListComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private ticketService: TicketService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }
