@@ -1,21 +1,33 @@
-<form>
-  <div class="example-container boxForm">
+<form  (ngSubmit)="createTicket.valid && onFormSubmit(createTicket)" #createTicket="ngForm">
+    <div class="example-container boxForm">
     <mat-form-field>
       <mat-select placeholder="Destinataire">
         <mat-option value="trainer">Formateur</mat-option>
         <mat-option value="admin">Campus manager</mat-option>
       </mat-select>
     </mat-form-field>
+
     <mat-form-field>
-      <input matInput placeholder="Sujet">
+      <input matInput placeholder="Sujet" type='text' name='title'
+             [(ngModel)]= "ticket.title" minlength="3" maxlength="255"
+             #titleRef="ngModel" required/>
+      <div *ngIf="titleRef?.errors?.required && createTicket.submitted">Entrez un sujet</div>
+      <div *ngIf="titleRef?.errors?.minlength && createTicket.submitted">Entrez au moins 3 caractères</div>
+      <div *ngIf="titleRef?.errors?.maxlength && createTicket.submitted">C'est trop long (255 caractères maximum)</div>
     </mat-form-field>
+
     <mat-form-field>
-      <textarea matInput placeholder="Ticket"></textarea>
+      <textarea matInput placeholder="Ticket" type='text' name='description'
+                [(ngModel)]="ticket.description" minlength="3" maxlength="255"
+                #descriptionRef="ngModel" required></textarea>
+      <div *ngIf="descriptionRef?.errors?.required && createTicket.submitted">Entrez une description</div>
+      <div *ngIf="descriptionRef?.errors?.minlength && createTicket.submitted">Entrez au moins 3 caractères</div>
+      <div *ngIf="descriptionRef?.errors?.maxlength && createTicket.submitted">C'est trop long (255 caractères maximum)</div>
     </mat-form-field>
+
     <div class='container'>
-      <button mat-flat-button >Reset</button>
+      <button mat-flat-button (click)="resetUserForm()" >Reset</button>
       <button mat-flat-button >Créer</button>
     </div>
   </div>
-
 </form>
