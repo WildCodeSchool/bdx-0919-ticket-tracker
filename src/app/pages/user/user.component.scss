@@ -3,7 +3,7 @@ body {
   height: 100%;
   color: #3b424e;
   font-family: "Raleway", sans-serif;
-  background-color: #f9ff5;
+  background-color: #f9f9f9;
 }
 
 .container {
@@ -32,4 +32,37 @@ body {
 button {
   background-color: #ffd64f;
   color: #3b424e;
+}
+
+footer {
+  width: 100%;
+  background-color: white;
+  padding: 4px 0;
+  position: absolute;
+  bottom: 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer li {
+  list-style: none;
+  color: grey;
+  margin: 0 16px 0 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: grey;
+}
+
+footer a:hover {
+  color: #3b424e;
+}
+
+.fa-heart {
+  color: #f99797;
 }
