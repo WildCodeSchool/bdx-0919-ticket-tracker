@@ -1,3 +1,4 @@
+
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -20,6 +21,12 @@ export class TicketService {
 
   public getById(id: number) {
     return this.http
+      .get(TicketService.URL + '/' + id)
+      .pipe(map(this.convertDataFromServerToTickets));
+  }
+
+  public addTicket(ticket: Ticket): Observable<any> {
+
       .get(TicketService.URL + "/" + id)
       .pipe(map(this.convertDataFromServerToTickets));
   }
