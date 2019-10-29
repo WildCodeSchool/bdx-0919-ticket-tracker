@@ -1,11 +1,9 @@
 <table class="links-tickets">
-  <td>
-    <a href="#" class="linkActive"> {{ firstTab() }} </a>
-  </td>
-  <td>
-    <a href="#">{{ secondTab() }}</a>
-  </td>
-  <td>
-    <a href="#">{{ thirdTab() }}</a>
+  <td *ngFor="let link of selectedList; let i = index">
+    <a [ngClass]="{ linkActive: i == indexClicked }" (click)="defineIndex(i)"
+      >{{ link }}
+    </a>
   </td>
 </table>
+
+<!--  -->
