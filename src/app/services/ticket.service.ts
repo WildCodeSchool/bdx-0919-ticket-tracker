@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Ticket } from "../models/ticket";
 import { map } from "rxjs/operators";
+
 @Injectable({
   providedIn: "root"
 })
@@ -31,5 +32,9 @@ export class TicketService {
     return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
+  }
+
+  deleteTicket(id: number): Observable<any> {
+    return this.http.delete(TicketService.URL + `/${id}` );
   }
 }
