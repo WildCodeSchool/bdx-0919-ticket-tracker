@@ -18,13 +18,9 @@ export class FormComponent implements OnInit {
   onReset(createTicket: NgForm) {
     createTicket.resetForm();
   }
-  onFormSubmit(createTicket: NgForm) {
-    console.log(createTicket);
-    createTicket.resetForm();
-  }
-  createTicket(newTicket: Ticket) {
+  onFormSubmit(newTicket: Ticket) {
     this.ticketService.addTicket(newTicket).subscribe(() => {
-      this.router.navigate(['/user']);
+    this.router.navigate(['/user']);
     });
   }
 }
