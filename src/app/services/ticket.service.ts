@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Ticket } from '../models/ticket';
-import { map } from 'rxjs/operators';
+
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Ticket } from "../models/ticket";
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TicketService {
-  static URL = 'https://wild-api.witpoc.com/tickets';
+  static URL = "https://wild-api.witpoc.com/tickets";
 
   constructor(private http: HttpClient) {}
 
@@ -25,6 +26,12 @@ export class TicketService {
   }
 
   public addTicket(ticket: Ticket): Observable<any> {
+
+      .get(TicketService.URL + "/" + id)
+      .pipe(map(this.convertDataFromServerToTickets));
+  }
+
+  public createTicket(ticket: Ticket): Observable<any> {
     return this.http.post(TicketService.URL, ticket);
   }
 

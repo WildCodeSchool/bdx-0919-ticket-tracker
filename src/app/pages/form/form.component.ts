@@ -15,7 +15,8 @@ export class FormComponent implements OnInit {
   ngOnInit() {}
 
   createTicket(newTicket) {
-    this.ticketService.addTicket(newTicket).subscribe(() => {
+
+    this.ticketService.createTicket(newTicket).subscribe(() => {
       this.router.navigate(["/user"]);
     });
   }
