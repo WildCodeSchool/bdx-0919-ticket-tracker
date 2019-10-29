@@ -15,11 +15,12 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
   }
-  resetUserForm(userForm: NgForm) {
-    userForm.resetForm();
+  onReset(createTicket: NgForm) {
+    createTicket.resetForm();
   }
-  onFormSubmit(userForm: NgForm) {
-    console.log(userForm);
+  onFormSubmit(createTicket: NgForm) {
+    console.log(createTicket);
+    createTicket.resetForm();
   }
   createTicket(newTicket: Ticket) {
     this.ticketService.addTicket(newTicket).subscribe(() => {
