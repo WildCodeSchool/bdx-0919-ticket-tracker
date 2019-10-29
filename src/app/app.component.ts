@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { TicketService } from './services/ticket.service';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  title = 'ticket-tracker';
+  title = "ticket-tracker";
 
-  constructor(private ticketService: TicketService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.ticketService.getAll().subscribe((tickets) => {
-      console.log(tickets);
-    });
-  }
+  ngOnInit() {}
 }
