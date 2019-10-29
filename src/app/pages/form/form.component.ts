@@ -1,6 +1,6 @@
+import { Ticket } from 'src/app/models/ticket';
 import { TicketService } from './../../services/ticket.service';
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from 'src/app/models/ticket';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 export class FormComponent implements OnInit {
   router: Router;
   constructor(private ticketService: TicketService) {}
+  newTicket: Ticket = new Ticket();
 
   ngOnInit() {
   }

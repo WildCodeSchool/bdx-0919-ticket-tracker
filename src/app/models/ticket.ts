@@ -6,9 +6,11 @@ export class Ticket {
   public createdAt: Date;
   public updatedAt: Date;
 
-  constructor(input: Ticket) {
+  constructor(input?: Ticket) {
+    if (input != null) {
     Object.assign(this, input);
     this.createdAt = new Date(input.createdAt);
     this.updatedAt = new Date(input.updatedAt);
+    }
   }
 }
