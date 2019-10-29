@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Ticket } from "../models/ticket";
 import { map } from "rxjs/operators";
@@ -23,7 +23,7 @@ export class TicketService {
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
-  public addTicket(ticket: Ticket): Observable<any> {
+  public createTicket(ticket: Ticket): Observable<any> {
     return this.http.post(TicketService.URL, ticket);
   }
 
