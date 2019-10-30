@@ -1,3 +1,4 @@
+import { User } from 'src/app/models/user';
 
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -25,13 +26,8 @@ export class TicketService {
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
-  public addTicket(ticket: Ticket): Observable<any> {
-
-      .get(TicketService.URL + "/" + id)
-      .pipe(map(this.convertDataFromServerToTickets));
-  }
-
   public createTicket(ticket: Ticket): Observable<any> {
+    ticket.user = ({id: 4} as User);
     return this.http.post(TicketService.URL, ticket);
   }
 

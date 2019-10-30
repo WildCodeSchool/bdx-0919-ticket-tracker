@@ -1,23 +1,28 @@
-import { TicketService } from "./../../services/ticket.service";
-import { Component, OnInit } from "@angular/core";
-import { Ticket } from "src/app/models/ticket";
-import { Router } from "@angular/router";
-
+import { Ticket } from 'src/app/models/ticket';
+import { TicketService } from './../../services/ticket.service';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 @Component({
-  selector: "app-form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"]
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  router: Router;
-  constructor(private ticketService: TicketService) {}
+  constructor(private ticketService: TicketService, private router: Router) {}
+  newTicket: Ticket = new Ticket();
 
-  ngOnInit() {}
-
-  createTicket(newTicket) {
-
+  ngOnInit() {
+  }
+  onReset(createTicket: NgForm) {
+    createTicket.resetForm();
+  }
+  onFormSubmit(newTicket: Ticket) {
     this.ticketService.createTicket(newTicket).subscribe(() => {
-      this.router.navigate(["/user"]);
+    this.router.navigate(['/user']);
     });
+  }
+  onClose() {
+    this.router.navigate(['/user']);
   }
 }
