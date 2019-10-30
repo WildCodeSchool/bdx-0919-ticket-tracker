@@ -1,6 +1,6 @@
 import { Ticket } from 'src/app/models/ticket';
 import { TicketService } from './../../services/ticket.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -9,8 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  router: Router;
-  constructor(private ticketService: TicketService) {}
+  constructor(private ticketService: TicketService, private router: Router) {}
   newTicket: Ticket = new Ticket();
 
   ngOnInit() {
@@ -19,8 +18,12 @@ export class FormComponent implements OnInit {
     createTicket.resetForm();
   }
   onFormSubmit(newTicket: Ticket) {
-    this.ticketService.addTicket(newTicket).subscribe(() => {
+    console.log(this.newTicket);
+    //this.ticketService.addTicket(newTicket).subscribe(() => {
     this.router.navigate(['/user']);
-    });
+   // });
+  }
+  onClose() {
+    this.router.navigate(['/user']);
   }
 }

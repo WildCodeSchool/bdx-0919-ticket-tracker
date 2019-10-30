@@ -2,12 +2,14 @@
       (ngSubmit)="createTicket.valid && onFormSubmit(createTicket)">
 
   <div class="example-container boxForm">
-
-    <mat-form-field>
-      <mat-select placeholder="Destinataire" name='receiver'  required
-                  [(ngModel)]="newTicket.receiver" #receiverRef="ngModel">
-        <mat-option value="trainer">Formateur</mat-option>
-        <mat-option value="admin">Campus manager</mat-option>
+  <div class='imgContainer'>
+      <img src='../../../assets/images/close.png' (click)="onClose()" >
+  </div>
+   <mat-form-field>
+      <mat-select placeholder="Destinataire" name='group'  required
+                  [(ngModel)]="newTicket.group" #receiverRef="ngModel">
+        <mat-option value="{id: 1}">Formateur</mat-option>
+        <mat-option value="{id: 1}">Campus manager</mat-option>
       </mat-select>
       <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">Choisis un destinataire</div>
     </mat-form-field>
