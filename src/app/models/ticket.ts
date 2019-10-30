@@ -13,7 +13,6 @@ export class Ticket {
   constructor(input?: Ticket) {
     if (input != null) {
     Object.assign(this, input);
-    this.user.id =  4;
     this.createdAt = new Date(input.createdAt);
     this.updatedAt = new Date(input.updatedAt);
     }

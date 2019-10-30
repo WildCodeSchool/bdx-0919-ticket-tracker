@@ -1,5 +1,5 @@
 <form #createTicket="ngForm"
-      (ngSubmit)="createTicket.valid && onFormSubmit(createTicket)">
+      (ngSubmit)="createTicket.valid && onFormSubmit(newTicket)">
 
   <div class="example-container boxForm">
   <div class='imgContainer'>
@@ -8,8 +8,8 @@
    <mat-form-field>
       <mat-select placeholder="Destinataire" name='group'  required
                   [(ngModel)]="newTicket.group" #receiverRef="ngModel">
-        <mat-option value="{id: 1}">Formateur</mat-option>
-        <mat-option value="{id: 1}">Campus manager</mat-option>
+        <mat-option [value]="{id: 1}">Formateur</mat-option>
+        <mat-option [value]="{id: 1}">Campus manager</mat-option>
       </mat-select>
       <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">Choisis un destinataire</div>
     </mat-form-field>

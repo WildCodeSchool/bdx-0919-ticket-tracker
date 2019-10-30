@@ -18,10 +18,9 @@ export class FormComponent implements OnInit {
     createTicket.resetForm();
   }
   onFormSubmit(newTicket: Ticket) {
-    console.log(this.newTicket);
-    //this.ticketService.addTicket(newTicket).subscribe(() => {
+    this.ticketService.createTicket(newTicket).subscribe(() => {
     this.router.navigate(['/user']);
-   // });
+    });
   }
   onClose() {
     this.router.navigate(['/user']);
