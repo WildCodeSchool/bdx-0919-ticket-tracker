@@ -1,8 +1,10 @@
+
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Ticket } from "../models/ticket";
 import { map } from "rxjs/operators";
+
 @Injectable({
   providedIn: "root"
 })
@@ -19,11 +21,17 @@ export class TicketService {
 
   public getById(id: number) {
     return this.http
-      .get(TicketService.URL + "/" + id)
+      .get(TicketService.URL + '/' + id)
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
   public addTicket(ticket: Ticket): Observable<any> {
+
+      .get(TicketService.URL + "/" + id)
+      .pipe(map(this.convertDataFromServerToTickets));
+  }
+
+  public createTicket(ticket: Ticket): Observable<any> {
     return this.http.post(TicketService.URL, ticket);
   }
 
@@ -31,5 +39,9 @@ export class TicketService {
     return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
+  }
+
+  deleteTicket(id: number): Observable<any> {
+    return this.http.delete(TicketService.URL + `/${id}` );
   }
 }
