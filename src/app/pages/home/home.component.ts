@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  showModal() {
+  connexion() {
     this.isModalVisible = !this.isModalVisible;
 
   }

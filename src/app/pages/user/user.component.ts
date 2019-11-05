@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import { ActivatedRoute} from "@angular/router";
 import { User } from "./../../models/user";
 import { Component, OnInit } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
@@ -21,7 +21,10 @@ export class UserComponent implements OnInit {
     status: "student"
   };
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe((data) => {
+      const token = data.get('token'); } );
+  }
 }
