@@ -2,7 +2,6 @@ import { WsHelperService } from './ws-helper.service';
 import { User } from 'src/app/models/user';
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ticket } from '../models/ticket';
 import { map } from 'rxjs/operators';
@@ -30,7 +29,7 @@ export class TicketService {
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = ({id: 4} as User);
+    ticket.user = ({id: 14982} as User);
     return this.wshelper.post(TicketService.URL, ticket);
   }
 

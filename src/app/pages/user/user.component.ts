@@ -1,3 +1,4 @@
+import { WsHelperService } from './../../services/ws-helper.service';
 import { TicketService } from './../../services/ticket.service';
 import { ActivatedRoute} from "@angular/router";
 import { User } from "./../../models/user";
@@ -23,12 +24,8 @@ export class UserComponent implements OnInit {
     status: "student"
   };
 
-  constructor(private route: ActivatedRoute, private service: TicketService) {}
+  constructor(private route: ActivatedRoute, private service: WsHelperService) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((data) => {
-      const token = data.get('token');
-      this.service.setToken(token);
-    });
   }
 }
