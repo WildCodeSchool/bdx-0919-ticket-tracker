@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Ticket } from "src/app/models/ticket";
-import { element } from "protractor";
+import { TicketService } from "../../services/ticket.service";
 
 @Component({
   selector: "app-ticket",
@@ -10,13 +10,14 @@ import { element } from "protractor";
 export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
 
-  constructor() {}
+  constructor(private ticketsService: TicketService) {}
 
   ngOnInit() {
     return this.ticket;
   }
 
-  editTicket(): void {
-    this.ticketsService.getbyId(this.ticket.id).subscride(() => {});
+  
+  delete(): void {
+    this.ticketsService.deleteTicket(this.ticket.id).subscribe(() => {});
   }
 }

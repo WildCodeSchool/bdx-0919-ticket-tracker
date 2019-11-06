@@ -1,29 +1,44 @@
-.home{
+.home {
   margin-top: 15vh;
 }
 
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-color {
+  width: 10%;
+  background-color: #f76c6c;
+  height: 100vh;
+}
+
 @media screen and (min-width: 1500px) {
-  .home{
+  .home {
     margin-top: 0;
   }
 }
-img{
-  display:block;
+img {
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.title{
+.title {
   height: 15vw;
   min-height: 80px;
 }
-.help{
+.help {
   height: 30vw;
   min-height: 250px;
 }
-button{
+button {
   color: #f9f9f9;
   background-color: #f76c6c;
-  display:block;
+  display: block;
   margin-right: auto;
   margin-left: auto;
+}
+
+button:hover {
+  background-color: rgb(200, 71, 64);
 }
