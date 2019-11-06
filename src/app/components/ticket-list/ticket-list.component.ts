@@ -8,7 +8,6 @@ import { TicketService } from "src/app/services/ticket.service";
   styleUrls: ["./ticket-list.component.scss"]
 })
 export class TicketListComponent implements OnInit {
-
   newTicket: Ticket;
   tickets: Ticket[];
 
@@ -34,8 +33,7 @@ export class TicketListComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticketService.getAll().subscribe((tickets) => {
-      this.tickets = tickets;
+      this.tickets = tickets.reverse();
     });
-
   }
 }
