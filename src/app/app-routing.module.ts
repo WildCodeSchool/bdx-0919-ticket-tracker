@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'form', component: FormComponent },
-  { path: 'auth/:token', component: UserComponent }
+  { path: 'auth/:token', component: UserComponent },
+  { path: 'user', component: UserComponent },
 ];
 
 @NgModule({

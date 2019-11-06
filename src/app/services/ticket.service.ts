@@ -35,14 +35,13 @@ export class TicketService {
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    const headers =  new HttpHeaders({Authorization: 'Bearer ' + this.token});
     return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
   }
 
   deleteTicket(id: number): Observable<any> {
-    const headers =  new HttpHeaders({Authorization: 'Bearer ' + this.token});
+
     return this.wshelper.delete(TicketService.URL + `/${id}` );
   }
 }
