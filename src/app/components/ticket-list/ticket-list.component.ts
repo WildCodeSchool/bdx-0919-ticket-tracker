@@ -30,10 +30,9 @@ export class TicketListComponent implements OnInit {
 
   constructor() {}
 
+  ngOnInit() {}
 
-  }
   onCheckDelete(indexDanslaList: number) {
     this.tickets.splice(indexDanslaList, 1);
   }
-
 }
