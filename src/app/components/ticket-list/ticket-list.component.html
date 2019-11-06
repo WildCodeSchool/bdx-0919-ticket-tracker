@@ -1,3 +1,4 @@
-<div *ngFor="let ticket of tickets">
-  <app-ticket [ticket]="ticket"></app-ticket>
+<div *ngFor="let ticket of tickets;let i = index">
+  <app-ticket [ticket]="ticket"
+  (getCheckDelete)="onCheckDelete(i)"></app-ticket>
 </div>

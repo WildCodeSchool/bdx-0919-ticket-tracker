@@ -39,4 +39,7 @@ export class TicketListComponent implements OnInit {
     });
 
   }
+  onCheckDelete(indexDanslaList: number) {
+    this.tickets.splice(indexDanslaList, 1);
+  }
 }
