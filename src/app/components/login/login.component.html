@@ -1,18 +1,18 @@
-<div class ="container">
+<div class="container">
   <div class="containerHTML">
     <form class="example-form">
       <div class="div-name">
         <mat-form-field>
-          <input matInput placeholder="Name" value="">
+          <input matInput placeholder="Nom" value="" />
         </mat-form-field>
-    </div>
+      </div>
 
       <div class="div-choice">
         <mat-form-field>
           <mat-label>Choix</mat-label>
           <mat-select>
             <mat-option *ngFor="let select of selects" [value]="select.value">
-              {{select.viewValue}}
+              {{ select.viewValue }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -20,21 +20,38 @@
 
       <div class="div-password">
         <mat-form-field>
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input
+            matInput
+            placeholder="Mot de passe"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
       </div>
     </form>
 
-    <div class="button" >
-      <button mat-flat-button [routerLink]="['/user']" routerLinkActive="router-link-active"  color="Connexion">Connexion</button>
+    <div class="button">
+      <button
+        mat-flat-button
+        [routerLink]="['/user']"
+        routerLinkActive="router-link-active"
+        color="Connexion"
+      >
+        Connexion
+      </button>
+    </div>
+    <div class="button">
+      <button mat-button (click)="hideModal()" class="back-btn">
+        Back
+      </button>
     </div>
   </div>
 </div>
-
-
-
-
-
