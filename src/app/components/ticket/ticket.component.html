@@ -1,25 +1,31 @@
-<mat-card class="example-card card-color">
+<mat-card class="ticket-card">
   <mat-card-header class="header">
     <div mat-card-avatar class="avatar"></div>
     <div class="name-cercle">
       <div class="name">
-        <div mat-card-title class>John</div>
-        <mat-card-subtitle>Lennon</mat-card-subtitle>
+        <div mat-card-title class>{{ ticket.user.firstname }}</div>
+        <mat-card-subtitle>{{ ticket.user.lastname }}</mat-card-subtitle>
       </div>
-      <div class="cercle"></div>
+      <mat-card-content class="content">
+        <div class="ticket-title">
+          <h4>{{ ticket.title }}</h4>
+        </div>
+        <p>
+          {{ ticket.description }}
+        </p>
+      </mat-card-content>
+      <div class="green-cercle"></div>
     </div>
   </mat-card-header>
-
-  <mat-card-content class="content">
-    <p>
-      {{ ticket.description }}
-    </p>
-  </mat-card-content>
   <div class="lastLine">
-    <div class="creationDate">{{ ticket.createdAt | date }}</div>
+    <div class="creationDate">
+      Crée le {{ ticket.createdAt | date: "medium" }}
+    </div>
     <mat-card-actions class="button">
       <button class="Edit" mat-button>Editer</button>
       <button class="Delete" mat-button (click)="delete(ticket)">Suppprimer</button>
     </mat-card-actions>
   </div>
 </mat-card>
+
+<div class="test-card"></div>
