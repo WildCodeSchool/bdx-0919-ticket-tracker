@@ -6,20 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  isModalVisible = false;
-
-
   constructor() { }
 
   ngOnInit() {
 
   }
-
-  connexion() {
-    this.isModalVisible = !this.isModalVisible;
-
-  }
-
-
 }

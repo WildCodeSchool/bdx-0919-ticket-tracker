@@ -1,6 +1,8 @@
+import { TicketService } from './../../services/ticket.service';
 import { ActivatedRoute} from "@angular/router";
 import { User } from "./../../models/user";
 import { Component, OnInit } from "@angular/core";
+
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 
@@ -21,10 +23,12 @@ export class UserComponent implements OnInit {
     status: "student"
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private service: TicketService) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((data) => {
-      const token = data.get('token'); } );
+      const token = data.get('token');
+      this.service.setToken(token);
+    });
   }
 }
