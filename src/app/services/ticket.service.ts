@@ -14,6 +14,7 @@ export class TicketService {
 
   constructor(private http: HttpClient) {}
 
+
   public getAll(): Observable<Ticket[]> {
     return this.http
       .get(TicketService.URL)
@@ -38,6 +39,7 @@ export class TicketService {
   }
 
   deleteTicket(id: number): Observable<any> {
-    return this.http.delete(TicketService.URL + `/${id}` );
+    return this.http
+    .delete(TicketService.URL + `/${id}` );
   }
 }
