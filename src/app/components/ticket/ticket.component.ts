@@ -16,7 +16,7 @@ export class TicketComponent implements OnInit {
     return this.ticket;
   }
 
-  editTicket(ticket) {
-    this.ticket.getbyId(ticket);
+  editTicket(): void {
+    this.ticketsService.getbyId(this.ticket.id).subscride(() => {});
   }
 }

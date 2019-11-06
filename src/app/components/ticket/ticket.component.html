@@ -18,7 +18,7 @@
 
   <div class="lastLine">
     <div class="creationDate">{{ ticket.createdAt | date }}</div>
-    <mat-card-actions class="button" click="editTicket(ticket)">
+    <mat-card-actions class="button" click="editTicket()">
       <button
         [routerLink]="['/form']"
         routerLinkActive="router-link-active"
