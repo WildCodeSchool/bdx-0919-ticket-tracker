@@ -10,6 +10,7 @@
   <div class="side-color"></div>
 </div>
 <app-login
-  [(isModalVisible)]="isModalVisible"
+  [isModalVisible]="isModalVisible"
+  (getModalVisible)="newIsModalVisible($event)"
   *ngIf="isModalVisible"
 ></app-login>
