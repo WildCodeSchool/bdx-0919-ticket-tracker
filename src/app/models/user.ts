@@ -1,7 +1,7 @@
 export class User {
   public id: number;
-  public firstName: string;
-  public lastName: string;
+  public firstname: string;
+  public lastname: string;
   public avatar: string;
   public status: string;
 
