@@ -15,10 +15,18 @@
       {{ ticket.description }}
     </p>
   </mat-card-content>
+
   <div class="lastLine">
     <div class="creationDate">{{ ticket.createdAt | date }}</div>
-    <mat-card-actions class="button">
-      <button class="Edit" mat-button>Editer</button>
+    <mat-card-actions class="button" click="editTicket(ticket)">
+      <button
+        [routerLink]="['/form']"
+        routerLinkActive="router-link-active"
+        class="Edit"
+        mat-button
+      >
+        Editer
+      </button>
       <button class="Delete" mat-button>Suppprimer</button>
     </mat-card-actions>
   </div>

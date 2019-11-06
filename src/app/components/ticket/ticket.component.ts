@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Ticket } from "src/app/models/ticket";
+import { element } from "protractor";
 
 @Component({
   selector: "app-ticket",
@@ -12,6 +13,10 @@ export class TicketComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.ticket);
+    return this.ticket;
+  }
+
+  editTicket(ticket) {
+    this.ticket.getbyId(ticket);
   }
 }
