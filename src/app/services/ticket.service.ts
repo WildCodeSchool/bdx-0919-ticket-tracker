@@ -27,7 +27,7 @@ export class TicketService {
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = ({id: 4} as User);
+    ticket.user = ({id: 14982} as User);
     return this.http.post(TicketService.URL, ticket);
   }
 
