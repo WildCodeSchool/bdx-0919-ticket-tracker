@@ -1,3 +1,5 @@
+import { User } from 'src/app/models/user';
+
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -20,11 +22,12 @@ export class TicketService {
 
   public getById(id: number) {
     return this.http
-      .get(TicketService.URL + "/" + id)
+      .get(TicketService.URL + '/' + id)
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
+    ticket.user = ({id: 4} as User);
     return this.http.post(TicketService.URL, ticket);
   }
 
