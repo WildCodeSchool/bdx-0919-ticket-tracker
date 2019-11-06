@@ -4,6 +4,7 @@ body {
   color: #3b424e;
   font-family: "Raleway", sans-serif;
   background-color: #f9f9f9;
+  margin-bottom: 50px;
 }
 
 .container {
@@ -38,8 +39,12 @@ footer {
   width: 100%;
   background-color: white;
   padding: 4px 0;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
 footer ul {
