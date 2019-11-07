@@ -5,6 +5,7 @@ export class Ticket {
   public id?: number;
   public user: User;
   public group: Group;
+  public school: any;
   public title: string;
   public description: string;
   public createdAt: Date;
