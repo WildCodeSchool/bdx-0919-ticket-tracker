@@ -43,6 +43,7 @@ export class FormComponent implements OnInit {
       this.router.navigate(["/user"]);
     });
   }
+
   onClose() {
     this.router.navigate(["/user"]);
   }

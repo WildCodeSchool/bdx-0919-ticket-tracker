@@ -1,7 +1,7 @@
 import { WsHelperService } from "./ws-helper.service";
 import { User } from "src/app/models/user";
-
 import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Ticket } from "../models/ticket";
 import { map } from "rxjs/operators";
@@ -38,5 +38,17 @@ export class TicketService {
 
   deleteTicket(id: number): Observable<any> {
     return this.wshelper.delete(TicketService.URL + `/${id}`);
+  }
+
+  filterTicketCursus(id: number): Observable<any> {
+    return this.wshelper.get(
+      TicketService.URL + `?filter=group||eq||${id}&join=group`
+    );
+  }
+
+  filterTicketSchool(id: number): Observable<any> {
+    return this.wshelper.get(
+      TicketService.URL + `?filter=school||eq||${id}&join=school`
+    );
   }
 }
