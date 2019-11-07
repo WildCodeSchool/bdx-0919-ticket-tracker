@@ -10,6 +10,8 @@ import { map } from "rxjs/operators";
   providedIn: "root"
 })
 export class TicketService {
+  // static URL = 'https://wild-api.witpoc.com/tickets';
+
   static URL = "https://wild-api.witpoc.com/tickets-secure";
   constructor(private wshelper: WsHelperService) {}
 
@@ -26,7 +28,7 @@ export class TicketService {
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = { id: 14982 } as User;
+    ticket.user = { id: 12258 } as User;
     return this.wshelper.post(TicketService.URL, ticket);
   }
 
