@@ -1,41 +1,99 @@
-<form #createTicket="ngForm"
-      (ngSubmit)="createTicket.valid && onFormSubmit(newTicket)">
-
+<form
+  #createTicket="ngForm"
+  (ngSubmit)="createTicket.valid && onFormSubmit(newTicket)"
+>
   <div class="example-container boxForm">
-  <div class='imgContainer'>
-      <img src='../../../assets/images/close.png' (click)="onClose()" >
-  </div>
-   <mat-form-field>
-      <mat-select placeholder="Destinataire" name='group'  required
-                  [(ngModel)]="newTicket.group" #receiverRef="ngModel">
-        <mat-option [value]="{id: 178}">Formateur</mat-option>
-        <mat-option [value]="{id: 178}">Campus manager</mat-option>
-      </mat-select>
-      <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">Choisis un destinataire</div>
-    </mat-form-field>
-
-
-    <mat-form-field>
-      <input matInput placeholder="Sujet" type='text' name='title'
-            [(ngModel)]= "newTicket.title" #titleRef="ngModel" required minlength="2" maxlength="255"/>
-      <div mat-error *ngIf="titleRef?.errors?.required && createTicket.submitted">Précise le sujet</div>
-      <div mat-error *ngIf="titleRef?.errors?.minlength && createTicket.submitted">Détaille un peu plus</div>
-      <div mat-error *ngIf="titleRef?.errors?.maxlength && createTicket.submitted">C'est trop long (255 caractères maximum)</div>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput placeholder="Ticket" type='text' name='description'
-                [(ngModel)]="newTicket.description" #descriptionRef="ngModel" minlength="3" maxlength="255"
-                required></textarea>
-      <div mat-error *ngIf="descriptionRef?.errors?.required && createTicket.submitted">Décris ton problème</div>
-      <div mat-error *ngIf="descriptionRef?.errors?.minlength && createTicket.submitted">Détaille un peu plus</div>
-      <div mat-error *ngIf="descriptionRef?.errors?.maxlength && createTicket.submitted">C'est trop long (255 caractères maximum)</div>
-    </mat-form-field>
-
-    <div class='container'>
-      <button mat-flat-button (click)="onReset()">Reset</button>
-      <button mat-flat-button (click)="onFormSubmit()">Créer</button>
+    <div class="imgContainer">
+      <img src="../../../assets/images/close.png" (click)="onClose()" />
     </div>
+    <mat-form-field>
+      <mat-select
+        placeholder="Destinataire"
+        name="group"
+        required
+        [(ngModel)]="newTicket.group"
+        #receiverRef="ngModel"
+      >
+        <mat-option [value]="{ id: 178 }">Formateur</mat-option>
+        <mat-option [value]="{ id: 178 }">Campus manager</mat-option>
+      </mat-select>
+      <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">
+        Choisis un destinataire
+      </div>
+    </mat-form-field>
 
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Sujet"
+        type="text"
+        name="title"
+        [(ngModel)]="newTicket.title"
+        #titleRef="ngModel"
+        required
+        minlength="2"
+        maxlength="255"
+      />
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.required && createTicket.submitted"
+      >
+        Précise le sujet
+      </div>
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.minlength && createTicket.submitted"
+      >
+        Détaille un peu plus
+      </div>
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.maxlength && createTicket.submitted"
+      >
+        C'est trop long (255 caractères maximum)
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Ticket"
+        type="text"
+        name="description"
+        [(ngModel)]="newTicket.description"
+        #descriptionRef="ngModel"
+        minlength="3"
+        maxlength="255"
+        required
+      ></textarea>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.required && createTicket.submitted"
+      >
+        Décris ton problème
+      </div>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.minlength && createTicket.submitted"
+      >
+        Détaille un peu plus
+      </div>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.maxlength && createTicket.submitted"
+      >
+        C'est trop long (255 caractères maximum)
+      </div>
+    </mat-form-field>
+
+    <div class="container">
+      <button mat-flat-button (click)="onReset()">Reset</button>
+      <button mat-flat-button (click)="onFormSubmit()" *ngIf="newTicket.id">
+        Modifier
+      </button>
+      <button mat-flat-button (click)="onFormSubmit()" *ngIf="!newTicket.id">
+        Créer
+      </button>
+    </div>
   </div>
 </form>
