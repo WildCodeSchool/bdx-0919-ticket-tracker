@@ -15,7 +15,6 @@ export class FormComponent implements OnInit {
   newTicket: Ticket = new Ticket();
   ticketType: string;
 
-
   ngOnInit() {
   }
   onReset(createTicket: NgForm) {
@@ -23,15 +22,17 @@ export class FormComponent implements OnInit {
   }
   onFormSubmit(newTicket: Ticket) {
     if (this.ticketType === 'CURSUS') {
-      newTicket.group = { id: 178} as Group;
+
+      newTicket.group = {id: 178} as Group;
     } else {
-      newTicket.school = { id: 5};
+      newTicket.school = {id: 5};
     }
-    this.ticketService.createTicket
-    (newTicket).subscribe(() => {
+    this.ticketService.createTicket(newTicket).subscribe(() => {
+
     this.router.navigate(['/user']);
     });
-  }
+    }
+
   onClose() {
     this.router.navigate(['/user']);
   }
