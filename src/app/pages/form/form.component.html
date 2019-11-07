@@ -11,11 +11,11 @@
         placeholder="Destinataire"
         name="group"
         required
-        [(ngModel)]="newTicket.group"
+        [(ngModel)]="ticketType"
         #receiverRef="ngModel"
       >
-        <mat-option [value]="{ id: 178 }">Formateur</mat-option>
-        <mat-option [value]="{ id: 178 }">Campus manager</mat-option>
+        <mat-option [value]="'CURSUS'">Formateur</mat-option>
+        <mat-option [value]="'SCHOOL'">Campus manager</mat-option>
       </mat-select>
       <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">
         Choisis un destinataire

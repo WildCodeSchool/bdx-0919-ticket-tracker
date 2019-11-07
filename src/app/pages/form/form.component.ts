@@ -4,6 +4,8 @@ import { Component, OnInit, Injectable } from "@angular/core";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
+import { Group } from "./../../models/group";
+
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",
@@ -17,6 +19,7 @@ export class FormComponent implements OnInit {
   ) {}
 
   newTicket: Ticket = new Ticket();
+  ticketType: string;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -31,6 +34,11 @@ export class FormComponent implements OnInit {
     createTicket.resetForm();
   }
   onFormSubmit(newTicket: Ticket) {
+    if (this.ticketType === "CURSUS") {
+      newTicket.group = { id: 178 } as Group;
+    } else {
+      newTicket.school = { id: 5 };
+    }
     this.ticketService.createTicket(newTicket).subscribe(() => {
       this.router.navigate(["/user"]);
     });

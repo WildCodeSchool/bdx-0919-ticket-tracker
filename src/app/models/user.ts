@@ -3,9 +3,9 @@ export class User {
   public firstname: string;
   public lastname: string;
   public avatar?: string;
-  public status: string;
+  public status?: string;
 
-  constructor(input: User) {
+  constructor(input?: User) {
     Object.assign(this, input);
   }
 }
