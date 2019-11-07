@@ -1,6 +1,12 @@
 <mat-card class="ticket-card">
   <mat-card-header class="header">
-    <div mat-card-avatar class="avatar"></div>
+    <img
+      [src]="
+        'https://avatars.githubusercontent.com/' + ticket.user.github + '?s=56'
+      "
+      alt="picture of the ticket owner"
+      class="avatar"
+    />
     <div class="name-cercle">
       <div class="name">
         <div mat-card-title class>{{ ticket.user.firstname }}</div>
@@ -14,7 +20,7 @@
           {{ ticket.description }}
         </p>
       </mat-card-content>
-      <div class="green-cercle"></div>
+      <div class="status-circle {{ ticket.status }} "></div>
     </div>
   </mat-card-header>
   <div class="lastLine">
