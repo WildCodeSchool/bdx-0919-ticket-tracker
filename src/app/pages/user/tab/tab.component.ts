@@ -19,10 +19,10 @@ export class TabComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (this.user.role === "student") {
-      this.selectedList = this.userList;
-    } else {
+    if (this.user.role === "administrator") {
       this.selectedList = this.adminList;
+    } else {
+      this.selectedList = this.userList;
     }
   }
 

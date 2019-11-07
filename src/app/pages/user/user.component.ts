@@ -15,12 +15,10 @@ export class UserComponent implements OnInit {
   user: User;
   tickets: Ticket[];
   mary: User = {
-    id: 14982,
-    firstname: "Mary",
-    lastname: "Royer",
-    github:
-      // tslint:disable-next-line: max-line-length
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+    id: 12258,
+    firstname: "Erique",
+    lastname: "Delacharlerie",
+    github: "https://avatars.githubusercontent.com/delache?s=56",
     role: "student"
   };
 

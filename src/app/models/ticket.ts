@@ -9,6 +9,7 @@ export class Ticket {
   public updatedAt: Date;
   public status: string;
   public user: User;
+  public groups: Group;
 
   constructor(input?: Ticket) {
     if (input != null) {
