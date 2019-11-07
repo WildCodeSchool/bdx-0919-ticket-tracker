@@ -1,7 +1,10 @@
 export class User {
-  public id: number;
+  public email: string;
   public firstname: string;
+  public github: string;
+  public id: number;
   public lastname: string;
+  public role: string;
   public avatar?: string;
   public status?: string;
 
