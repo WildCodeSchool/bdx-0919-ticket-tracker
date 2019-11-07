@@ -31,11 +31,11 @@
 }
 
 .avatar {
-  background-image: url("https://images.unsplash.com/photo-1552072805-2a9039d00e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-  background-size: cover;
-  background-position: center;
   width: 70px;
   height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 4px;
 }
 
 .content {
@@ -50,11 +50,22 @@ h4 {
   margin-bottom: 8px;
 }
 
-.green-cercle {
+.status-circle {
   width: 15px;
   height: 15px;
   border-radius: 20px;
+}
+
+.done {
   background: rgb(1, 97, 1);
+}
+
+.inProgress {
+  background: orange;
+}
+
+.ASKED {
+  background: red;
 }
 
 .button {

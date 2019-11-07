@@ -33,7 +33,7 @@ export class TicketService {
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    return tickets.map(ticket => {
+    return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
   }

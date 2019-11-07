@@ -1,5 +1,5 @@
-import { Group } from './group';
-import { User } from 'src/app/models/user';
+import { Group } from "./group";
+import { User } from "src/app/models/user";
 
 export class Ticket {
   public id?: number;
