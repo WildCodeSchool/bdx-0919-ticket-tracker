@@ -25,7 +25,7 @@ export class TicketService {
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = { id: 14982 } as User;
+    ticket.user = { id: 12258 } as User;
     return this.wshelper.post(TicketService.URL, ticket);
   }
 
