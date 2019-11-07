@@ -7,9 +7,9 @@
   </div>
    <mat-form-field>
       <mat-select placeholder="Destinataire" name='group'  required
-                  [(ngModel)]="newTicket.group" #receiverRef="ngModel">
-        <mat-option [value]="{id: 178}">Formateur</mat-option>
-        <mat-option [value]="{id: 5}">Campus manager</mat-option>
+                  [(ngModel)]="ticketType" #receiverRef="ngModel">
+        <mat-option [value]="'CURSUS'">Formateur</mat-option>
+        <mat-option [value]="'SCHOOL'">Campus manager</mat-option>
       </mat-select>
       <div *ngIf="receiverRef?.errors?.required && createTicket.submitted">Choisis un destinataire</div>
     </mat-form-field>

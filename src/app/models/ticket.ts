@@ -1,10 +1,11 @@
-import { Group } from "./group";
-import { User } from "src/app/models/user";
+import { Group } from './group';
+import { User } from 'src/app/models/user';
 
 export class Ticket {
   public id?: number;
   public user: User;
   public group: Group;
+  public school: any;
   public title: string;
   public description: string;
   public createdAt: Date;
