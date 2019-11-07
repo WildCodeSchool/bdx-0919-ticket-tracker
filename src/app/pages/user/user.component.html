@@ -1,5 +1,5 @@
 <header class="presentation-user">
-  <!--<app-avatar [user]="mary"></app-avatar>-->
+  <app-avatar [user]="user"></app-avatar>
   <div class="text-user">
     <div class="user-name">
       <h2>{{ user.firstname }} {{ user.lastname | uppercase }}</h2>
@@ -15,7 +15,7 @@
   </div>
 </header>
 <div class="container">
-  <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)" ></app-tab>
+  <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)"></app-tab>
   <app-ticket-list [tickets]="tickets"></app-ticket-list>
 </div>
 <footer>
@@ -36,4 +36,3 @@
     <li>@2019 v 1.0</li>
   </ul>
 </footer>
-
