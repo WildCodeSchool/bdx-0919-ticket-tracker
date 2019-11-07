@@ -1,5 +1,5 @@
-import { Group } from './group';
-import { User } from 'src/app/models/user';
+import { Group } from "./group";
+import { User } from "src/app/models/user";
 
 export class Ticket {
   public id?: number;
@@ -12,9 +12,9 @@ export class Ticket {
 
   constructor(input?: Ticket) {
     if (input != null) {
-    Object.assign(this, input);
-    this.createdAt = new Date(input.createdAt);
-    this.updatedAt = new Date(input.updatedAt);
+      Object.assign(this, input);
+      this.createdAt = new Date(input.createdAt);
+      this.updatedAt = new Date(input.updatedAt);
     }
   }
 }

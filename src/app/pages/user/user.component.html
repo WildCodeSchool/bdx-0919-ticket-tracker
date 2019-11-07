@@ -2,7 +2,7 @@
   <app-avatar [user]="mary"></app-avatar>
   <div class="text-user">
     <div class="user-name">
-      <h2>{{ mary.firstName }} {{ mary.lastName | uppercase }}</h2>
+      <h2>{{ mary.firstname }} {{ mary.lastname | uppercase }}</h2>
       <p>Bordeaux - Angular</p>
     </div>
     <button
@@ -16,7 +16,7 @@
 </header>
 <div class="container">
   <app-tab [user]="mary"></app-tab>
-  <app-ticket-list></app-ticket-list>
+  <app-ticket-list [tickets]="tickets"></app-ticket-list>
 </div>
 <footer>
   <ul>
