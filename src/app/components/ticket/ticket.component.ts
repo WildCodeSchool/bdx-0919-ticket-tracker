@@ -17,7 +17,6 @@ export class TicketComponent implements OnInit {
   constructor(private ticketsService: TicketService, private http: HttpClient) {}
 
   ngOnInit() {
-    console.log(this.ticket);
   }
 
   delete() {
