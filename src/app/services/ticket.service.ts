@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class TicketService {
 
-  static URL = 'https://wild-api.witpoc.com/tickets';
+ // static URL = 'https://wild-api.witpoc.com/tickets';
 
   static URL = 'https://wild-api.witpoc.com/tickets-secure';
   constructor(private wshelper: WsHelperService) {}
@@ -32,7 +32,7 @@ export class TicketService {
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = ({id: 14982} as User);
+    ticket.user = ({id: 12258} as User);
     return this.wshelper.post(TicketService.URL, ticket);
   }
 
@@ -43,17 +43,17 @@ export class TicketService {
   }
 
   deleteTicket(id: number): Observable<any> {
-
-    return this.wshelper.delete(TicketService.URL + `/${id}` );
+    return this.wshelper
+    .delete(TicketService.URL + `/${id}` );
   }
 
   filterTicketCursus(id: number): Observable<any> {
-    return this.http
+    return this.wshelper
     .get(TicketService.URL + `?filter=group||eq||${id}&join=group`);
   }
 
   filterTicketSchool(id: number): Observable<any> {
-    return this.http
+    return this.wshelper
     .get(TicketService.URL + `?filter=school||eq||${id}&join=school`);
   }
 
