@@ -1,4 +1,4 @@
-import { User } from 'src/app/models/user';
+import { User } from "src/app/models/user";
 
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -14,32 +14,30 @@ export class TicketService {
 
   constructor(private http: HttpClient) {}
 
-
   public getAll(): Observable<Ticket[]> {
     return this.http
       .get(TicketService.URL)
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
-  public getById(id: number) {
+  public getById(id: number): Observable<any> {
     return this.http
-      .get(TicketService.URL + '/' + id)
-      .pipe(map(this.convertDataFromServerToTickets));
+      .get(TicketService.URL + "/" + id)
+      .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = ({id: 14982} as User);
+    ticket.user = { id: 14982 } as User;
     return this.http.post(TicketService.URL, ticket);
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    return tickets.map((ticket) => {
+    return tickets.map(ticket => {
       return new Ticket(ticket);
     });
   }
 
   deleteTicket(id: number): Observable<any> {
-    return this.http
-    .delete(TicketService.URL + `/${id}` );
+    return this.http.delete(TicketService.URL + `/${id}`);
   }
 }
