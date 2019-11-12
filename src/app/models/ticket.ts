@@ -10,6 +10,7 @@ export class Ticket {
   public description?: string;
   public createdAt?: Date;
   public updatedAt?: Date;
+  public status?: string;
 
   constructor(input?: Ticket) {
     if (input != null) {
