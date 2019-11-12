@@ -1,17 +1,17 @@
-import { UserService } from "./../../services/user.service";
-import { Ticket } from "./../../models/ticket";
-import { Routes } from "@angular/router";
-import { User } from "./../../models/user";
-import { Component, OnInit } from "@angular/core";
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
-import { TicketService } from "src/app/services/ticket.service";
-import { Observable } from "rxjs";
+import { UserService } from './../../services/user.service';
+import { Ticket } from './../../models/ticket';
+import { Routes } from '@angular/router';
+import { User } from './../../models/user';
+import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { TicketService } from 'src/app/services/ticket.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: "app-user",
-  templateUrl: "./user.component.html",
-  styleUrls: ["./user.component.scss"]
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
   tickets: Ticket[];
@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): any {
     this.ticketService.getAll().subscribe((tickets) => {
-      this.tickets = tickets.reverse();
+      this.tickets = tickets;
     });
     this.user = this.userService.user;
     console.log(this.user);

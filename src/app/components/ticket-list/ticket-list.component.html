@@ -1,4 +1,4 @@
-<div *ngFor="let ticket of tickets;let i = index" animationDuration="2000ms">
+<div *ngFor="let ticket of tickets.reverse() ;let i = index" animationDuration="2000ms">
   <app-ticket [ticket]="ticket"
   (getCheckDelete)="onCheckDelete(i)"></app-ticket>
 </div>
