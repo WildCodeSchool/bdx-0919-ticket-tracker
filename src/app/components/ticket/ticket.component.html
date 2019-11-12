@@ -28,7 +28,10 @@
     <div class="creationDate">
       Crée le {{ ticket.createdAt | date: "medium" }}
     </div>
-    <app-edit-button [ticket]="ticket"></app-edit-button>
+    <app-edit-button
+      [ticket]="ticket"
+      *ngIf="ticket.user.role === 'student'"
+    ></app-edit-button>
   </div>
 </mat-card>
 
