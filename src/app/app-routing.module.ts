@@ -1,17 +1,19 @@
-import { AuthComponent } from "./pages/auth/auth.component";
-import { NgModule } from "@angular/core";
-import { FormComponent } from "./pages/form/form.component";
-import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./pages/home/home.component";
-import { UserComponent } from "./pages/user/user.component";
+import { TicketsGuard } from './services/tickets.guard';
+import { AuthComponent } from './pages/auth/auth.component';
+import { NgModule } from '@angular/core';
+import { FormComponent } from './pages/form/form.component';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { UserComponent } from './pages/user/user.component';
+
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "home" },
-  { path: "home", component: HomeComponent },
-  { path: "auth/:token", component: AuthComponent },
-  { path: "user", component: UserComponent },
-  { path: "form", component: FormComponent },
-  { path: "edit/:id", component: FormComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent, canActivate: [TicketsGuard]},
+  { path: 'auth/:token', component: AuthComponent, canActivate: [TicketsGuard] },
+  { path: 'user', component: UserComponent, canActivate: [TicketsGuard] },
+  { path: 'form', component: FormComponent, canActivate: [TicketsGuard] },
+  { path: 'edit/:id', component: FormComponent, canActivate: [TicketsGuard] }
 ];
 
 @NgModule({

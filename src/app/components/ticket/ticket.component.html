@@ -28,19 +28,14 @@
     <div class="creationDate">
       Crée le {{ ticket.createdAt | date: "medium" }}
     </div>
-
-    <mat-card-actions class="button" click="editTicket()">
-      <button
-        routerLink="/edit/{{ ticket.id }}"
-        routerLinkActive="router-link-active"
-        class="Edit"
-        mat-button
-      >
-        Editer
-      </button>
-
-      <button class="Delete" mat-button (click)="delete()">Suppprimer</button>
-    </mat-card-actions>
+    <app-edit-button
+      [ticket]="ticket"
+      *ngIf="ticket.user.role === 'student'"
+    ></app-edit-button>
+    <app-admin-button
+      [ticket]="ticket"
+      *ngIf="ticket.user.role === 'administrator'"
+    ></app-admin-button>
   </div>
 </mat-card>
 

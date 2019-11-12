@@ -1,0 +1,14 @@
+<mat-card-actions class="button" click="editTicket()">
+  <button
+    routerLink="/edit/{{ ticket.id }}"
+    routerLinkActive="router-link-active"
+    class="Edit"
+    mat-raised-button
+  >
+    Editer
+  </button>
+
+  <button class="Delete" mat-raised-button (click)="delete()">
+    Suppprimer
+  </button>
+</mat-card-actions>

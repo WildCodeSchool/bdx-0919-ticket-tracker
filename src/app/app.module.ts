@@ -1,3 +1,5 @@
+import { AdminButtonComponent } from './components/ticket/admin-button/admin-button.component';
+import { EditButtonComponent } from './components/ticket/edit-button/edit-button.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +35,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     TicketListComponent,
     FormComponent,
     TicketComponent,
-    AuthComponent
+    AuthComponent,
+    EditButtonComponent,
+    AdminButtonComponent
   ],
   imports: [
     BrowserModule,
