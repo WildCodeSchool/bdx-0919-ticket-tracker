@@ -1,7 +1,15 @@
-<table class="links-tickets">
+<!-- <table class="links-tickets">
   <td *ngFor="let link of selectedList; let i = index">
     <a [ngClass]="{ linkActive: i == indexClicked }" (click)="defineIndex(i)"
       >{{ link }}
     </a>
   </td>
-</table>
+</table> -->
+
+<nav mat-tab-nav-bar mat-align-tabs="center" class="links-tickets" >
+  <a mat-tab-link
+  *ngFor="let link of selectedList; let i = index"
+  [ngClass]="{ linkActive: i == indexClicked }" (click)="defineIndex(i)"
+  >{{ link }}
+  </a>
+</nav>

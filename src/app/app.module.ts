@@ -21,6 +21,7 @@ import { TicketListComponent } from './components/ticket-list/ticket-list.compon
 import { FormComponent } from './pages/form/form.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthComponent } from './pages/auth/auth.component';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
