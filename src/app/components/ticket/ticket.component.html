@@ -32,6 +32,10 @@
       [ticket]="ticket"
       *ngIf="ticket.user.role === 'student'"
     ></app-edit-button>
+    <app-admin-button
+      [ticket]="ticket"
+      *ngIf="ticket.user.role === 'administrator'"
+    ></app-admin-button>
   </div>
 </mat-card>
 

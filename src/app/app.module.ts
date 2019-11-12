@@ -1,3 +1,4 @@
+import { AdminButtonComponent } from "./components/ticket/admin-button/admin-button.component";
 import { EditButtonComponent } from "./components/ticket/edit-button/edit-button.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -34,7 +35,8 @@ import { AuthComponent } from "./pages/auth/auth.component";
     FormComponent,
     TicketComponent,
     AuthComponent,
-    EditButtonComponent
+    EditButtonComponent,
+    AdminButtonComponent
   ],
   imports: [
     BrowserModule,
