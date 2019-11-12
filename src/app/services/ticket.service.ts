@@ -1,19 +1,20 @@
-import { WsHelperService } from "./ws-helper.service";
-import { User } from "src/app/models/user";
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Ticket } from "../models/ticket";
-import { map } from "rxjs/operators";
+import { UserService } from './user.service';
+import { WsHelperService } from './ws-helper.service';
+import { User } from 'src/app/models/user';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Ticket } from '../models/ticket';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class TicketService {
   // static URL = 'https://wild-api.witpoc.com/tickets';
 
-  static URL = "https://wild-api.witpoc.com/tickets-secure";
-  constructor(private wshelper: WsHelperService) {}
+  static URL = 'https://wild-api.witpoc.com/tickets-secure';
+  constructor(private wshelper: WsHelperService, private userService: UserService) {}
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
@@ -23,12 +24,12 @@ export class TicketService {
 
   public getById(id: number): Observable<any> {
     return this.wshelper
-      .get(TicketService.URL + "/" + id)
+      .get(TicketService.URL + '/' + id)
       .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
   public createTicket(ticket: Ticket): Observable<any> {
-    ticket.user = { id: 12258 } as User;
+    ticket.user = this.userService.user;
     return this.wshelper.post(TicketService.URL, ticket);
   }
 
