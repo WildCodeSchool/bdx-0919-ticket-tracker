@@ -1,7 +1,5 @@
 import { Ticket } from "src/app/models/ticket";
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
-import { TicketService } from "../../services/ticket.service";
 
 @Component({
   selector: "app-ticket",
@@ -10,24 +8,12 @@ import { TicketService } from "../../services/ticket.service";
 })
 export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
-  @Output() getCheckDelete = new EventEmitter<Ticket>();
 
   tickets: Ticket[];
 
-  constructor(
-    private ticketsService: TicketService,
-    private http: HttpClient
-  ) {}
+  constructor() {}
 
   ngOnInit() {
     return this.ticket;
-  }
-
-  delete() {
-    this.ticketsService
-      .deleteTicket(this.ticket.id)
-      .subscribe((data: Ticket) => {
-        this.getCheckDelete.emit(data);
-      });
   }
 }
