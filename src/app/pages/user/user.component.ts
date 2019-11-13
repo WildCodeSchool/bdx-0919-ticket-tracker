@@ -1,6 +1,6 @@
 import { UserService } from './../../services/user.service';
 import { Ticket } from './../../models/ticket';
-import { Routes } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +19,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     private ticketService: TicketService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
   ) {}
 
   ngOnInit(): any {
@@ -31,6 +32,10 @@ export class UserComponent implements OnInit {
       this.user = user;
     });
     console.log(this.user);
+  }
+  deconnection() {
+    localStorage.clear();
+    this.router.navigate(['/home']);
   }
 
   dealWithTabChanged(index) {

@@ -4,9 +4,9 @@
     <div class="user-name">
       <h2>{{ user.firstname }} {{ user.lastname | uppercase }}</h2>
       <p>Bordeaux - Angular</p>
+      <a (click)='deconnection()'>Déconnexion</a>
     </div>
-    <button
-      [routerLink]="['/form']"
+    <button [routerLink]="['/form']"
       routerLinkActive="router-link-active"
       mat-button
     >
