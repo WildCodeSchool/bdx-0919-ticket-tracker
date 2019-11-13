@@ -23,10 +23,11 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit(): any {
+    this.user = this.userService.user;
     this.ticketService.getAll().subscribe((tickets) => {
       this.tickets = tickets;
-    });
-    this.user = this.userService.user;
+      this.user = this.userService.user;
+  });
     console.log(this.user);
   }
   deconnection() {
