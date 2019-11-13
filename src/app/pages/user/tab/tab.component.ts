@@ -14,9 +14,9 @@ export class TabComponent implements OnInit {
   @Output() tabChanged = new EventEmitter<number>();
 
   private userList = [
-    'Tous les tickets',
     'Tickets cursus',
-    'Tickets administration'
+    'Tickets administration',
+    'Historique',
   ];
   private adminList = ['En attente', 'En cours', 'Traités'];
   selectedList: string[];
