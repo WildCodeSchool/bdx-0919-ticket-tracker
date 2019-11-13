@@ -44,11 +44,11 @@ export class UserComponent implements OnInit {
     let serverRequest$: Observable<Ticket[]>;
     if (this.user.role === 'student') {
       if (index === 0) {
-        serverRequest$ = this.ticketService.getAll();
+        serverRequest$ = this.ticketService.filterTicketCursus();
       } else if (index === 1) {
-        serverRequest$ = this.ticketService.filterTicketCursus(178);
+        serverRequest$ = this.ticketService.filterTicketSchool();
       } else if (index === 2) {
-        serverRequest$ = this.ticketService.filterTicketSchool(5);
+        serverRequest$ = this.ticketService.getAll();
       }
     } else {
       if (index === 0) {
