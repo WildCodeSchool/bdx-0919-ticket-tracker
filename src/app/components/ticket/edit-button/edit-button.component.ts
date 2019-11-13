@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Ticket } from 'src/app/models/ticket';
-import { TicketService } from 'src/app/services/ticket.service';
-import { UserService } from 'src/app/services/user.service';
+import { Ticket } from '../../../models/ticket';
+import { TicketService } from '../../../services/ticket.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-edit-button',
