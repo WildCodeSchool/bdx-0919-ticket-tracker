@@ -18,6 +18,7 @@ export class EditButtonComponent implements OnInit {
   ) {}
 
   idUser = this.userService.user.id;
+  
   ngOnInit() {}
 
   delete() {
