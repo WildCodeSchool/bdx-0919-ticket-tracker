@@ -20,7 +20,9 @@ export class AuthComponent implements OnInit {
 
     this.route.paramMap.subscribe((data) => {
       const token = data.get('token');
+      localStorage.setItem('TOKEN', JSON.stringify(token));
       this.wshelper.setToken(token);
+
       this.userService.getUser().subscribe(() => {
         console.log(this.userService.user);
         this.router.navigate(['/user']);

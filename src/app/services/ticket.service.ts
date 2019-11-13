@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class TicketService {
   static URL = 'https://wild-api.witpoc.com/tickets';
+  private token: string;
 
   // static URL = 'https://wild-api.witpoc.com/tickets-secure';
   constructor(private wshelper: WsHelperService, private userService: UserService) {}
