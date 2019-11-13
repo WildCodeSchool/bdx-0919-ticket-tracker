@@ -26,7 +26,6 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HeaderComponent } from './pages/user/header/header.component';
 import { FooterComponent } from './pages/user/footer/footer.component';
-import { SinglePageComponent } from './pages/single-page/single-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { SinglePageComponent } from './pages/single-page/single-page.component';
     AdminButtonComponent,
     HeaderComponent,
     FooterComponent,
-    SinglePageComponent
   ],
   imports: [
     BrowserModule,
