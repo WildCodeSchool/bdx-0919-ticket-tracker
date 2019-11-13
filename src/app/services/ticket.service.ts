@@ -11,9 +11,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TicketService {
-  // static URL = 'https://wild-api.witpoc.com/tickets';
+  static URL = 'https://wild-api.witpoc.com/tickets';
 
-  static URL = 'https://wild-api.witpoc.com/tickets-secure';
+  // static URL = 'https://wild-api.witpoc.com/tickets-secure';
   constructor(private wshelper: WsHelperService, private userService: UserService) {}
 
   public getAll(): Observable<Ticket[]> {
