@@ -16,7 +16,7 @@
 </header>
 <div class="container">
   <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)"></app-tab>
-  <app-ticket-list [tickets]="tickets"></app-ticket-list>
+  <app-ticket-list [tickets]="tickets" [user]="user"></app-ticket-list>
 </div>
 <footer>
   <ul>

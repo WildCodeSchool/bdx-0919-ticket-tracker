@@ -1,6 +1,12 @@
-<div *ngFor="let ticket of tickets.reverse() ;let i = index" animationDuration="2000ms">
-  <app-ticket [ticket]="ticket"
-  (getCheckDelete)="onCheckDelete(i)"></app-ticket>
+<div
+  *ngFor="let ticket of tickets.reverse(); let i = index"
+  animationDuration="2000ms"
+>
+  <app-ticket
+    [ticket]="ticket"
+    [user]="user"
+    (getCheckDelete)="onCheckDelete(i)"
+  ></app-ticket>
 </div>
 
 <!--
@@ -8,5 +14,3 @@
   <mat-tab app-ticket [ticket]="ticket"
     (getCheckDelete)="onCheckDelete(i)" ></app-ticket mat-tab>
 </mat-tab-group> -->
-
-

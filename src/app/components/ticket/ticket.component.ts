@@ -1,3 +1,4 @@
+import { User } from './../../models/user';
 import { Ticket } from "src/app/models/ticket";
 import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 
@@ -8,6 +9,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 })
 export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
+  @Input() user: User;
 
   tickets: Ticket[];
 
