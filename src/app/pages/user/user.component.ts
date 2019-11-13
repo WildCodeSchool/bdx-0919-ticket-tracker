@@ -27,10 +27,7 @@ export class UserComponent implements OnInit {
     this.ticketService.getAll().subscribe((tickets) => {
       this.tickets = tickets;
     });
-    this.userService.getUser()
-    .subscribe((user: User) => {
-      this.user = user;
-    });
+    this.user = this.userService.user;
     console.log(this.user);
   }
   deconnection() {
