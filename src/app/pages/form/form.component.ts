@@ -1,7 +1,7 @@
 import { Group } from './../../models/group';
 import { Ticket } from 'src/app/models/ticket';
 import { TicketService } from './../../services/ticket.service';
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
@@ -26,7 +26,7 @@ export class FormComponent implements OnInit {
       this.newTicket.id = parseInt(params.get('id'));
       this.ticketService.getById(this.newTicket.id).subscribe(ticket => {
         this.newTicket = ticket;
-        if (this.ticket) {
+        if (this.newTicket.group) {
           this.ticketType === 'CURSUS';
         } else {
           this.ticketType === 'SCHOOL';
@@ -34,10 +34,11 @@ export class FormComponent implements OnInit {
       });
     });
   }
-  editTicket(): void {}
+
   onReset(createTicket: NgForm) {
     createTicket.resetForm();
   }
+
   onFormSubmit(newTicket: Ticket) {
     if (this.ticketType === 'CURSUS') {
       this.newTicket.group = { id: 178 } as Group;
@@ -50,7 +51,9 @@ export class FormComponent implements OnInit {
   }
 
   onUpdateTicket(newTicket: Ticket) {
-    this.ticketService.update;
+    this.ticketService.updateTicket(this.newTicket).subscribe();
+
+    this.router.navigate(['/user']);
   }
 
   onClose() {

@@ -1,3 +1,4 @@
+import { TicketsGuard } from './tickets.guard';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -22,6 +23,11 @@ export class WsHelperService {
   post(url: string, data: any) {
     const headers = this.createAuthHeader();
     return this.http.post(url, data, { headers });
+  }
+
+  put(url: string, data: any) {
+    const headers = this.createAuthHeader();
+    return this.http.put(url, data, { headers });
   }
 
   delete(ressourceUrl: string) {

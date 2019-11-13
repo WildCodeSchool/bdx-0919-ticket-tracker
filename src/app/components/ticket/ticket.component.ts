@@ -1,5 +1,4 @@
 import { Ticket } from 'src/app/models/ticket';
-
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/models/user';
 
@@ -11,18 +10,22 @@ import { User } from 'src/app/models/user';
 export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
   @Input() user: User;
-  @Output() getCheckEdit = new EventEmitter<Ticket>();
- 
-
-  constructor() {}
+  @Output() getCheckDelete = new EventEmitter<Ticket>();
+  @Output() getCheckUpdate = new EventEmitter<Ticket>();
 
   tickets: Ticket[];
+
+  constructor() {}
 
   ngOnInit() {
     return this.ticket;
   }
 
-  onCheckEdit($event) {
-    this.getCheckEdit.emit($event)
+  onCheckDelete($event) {
+    this.getCheckDelete.emit($event);
+  }
+
+  onCheckUpdate($event) {
+    this.getCheckUpdate.emit($event);
   }
 }
