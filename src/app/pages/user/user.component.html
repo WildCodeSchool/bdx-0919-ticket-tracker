@@ -1,4 +1,4 @@
-<header class="presentation-user" *ngIf="user != null" >
+<header class="presentation-user" *ngIf="user != null">
   <app-avatar [user]="user"></app-avatar>
   <div class="text-user">
     <div class="user-name">
@@ -10,6 +10,7 @@
       [routerLink]="['/form']"
       routerLinkActive="router-link-active"
       mat-button
+      *ngIf="user.role === 'student'"
     >
       Créer un ticket
     </button>
