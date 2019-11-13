@@ -14,7 +14,10 @@ export class TicketService {
   static URL = 'https://wild-api.witpoc.com/tickets';
 
   // static URL = 'https://wild-api.witpoc.com/tickets-secure';
-  constructor(private wshelper: WsHelperService, private userService: UserService) {}
+  constructor(
+    private wshelper: WsHelperService,
+    private userService: UserService
+  ) {}
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
@@ -28,13 +31,15 @@ export class TicketService {
       .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
+ 
+
   public createTicket(ticket: Ticket): Observable<any> {
     ticket.user = this.userService.user;
     return this.wshelper.post(TicketService.URL, ticket);
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    return tickets.map((ticket) => {
+    return tickets.map(ticket => {
       return new Ticket(ticket);
     });
   }

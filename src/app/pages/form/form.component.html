@@ -88,7 +88,7 @@
 
     <div class="container">
       <button mat-flat-button (click)="onReset()">Reset</button>
-      <button mat-flat-button (click)="onFormSubmit()" *ngIf="newTicket.id">
+      <button mat-flat-button (click)="onUpdateTicket()" *ngIf="newTicket.id">
         Modifier
       </button>
       <button mat-flat-button (click)="onFormSubmit()" *ngIf="!newTicket.id">

@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class WsHelperService {
   constructor(private http: HttpClient) {}
@@ -30,6 +30,6 @@ export class WsHelperService {
   }
 
   private createAuthHeader() {
-    return new HttpHeaders({ Authorization: "Bearer " + this.token });
+    return new HttpHeaders({ Authorization: 'Bearer ' + this.token });
   }
 }
