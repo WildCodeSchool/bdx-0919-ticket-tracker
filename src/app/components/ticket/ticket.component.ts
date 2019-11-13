@@ -1,5 +1,6 @@
 import { Ticket } from './../../models/ticket';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { User } from 'src/app/models/user';
 
 
 @Component({
@@ -8,6 +9,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./ticket.component.scss']
 })
 export class TicketComponent implements OnInit {
+
+  @Input() ticket: Ticket;
+  @Input() user: User;
+
 
 
   constructor() {}

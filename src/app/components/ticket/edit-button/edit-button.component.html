@@ -1,14 +1,18 @@
-<mat-card-actions class="button" click="editTicket()">
+<mat-card-actions
+  class="button"
+  click="editTicket()"
+  *ngIf="ticket.user.id === idUser"
+>
   <button
     routerLink="/edit/{{ ticket.id }}"
     routerLinkActive="router-link-active"
-    class="Edit"
+    class="edit"
     mat-raised-button
   >
     Editer
   </button>
 
-  <button class="Delete" mat-raised-button (click)="delete()">
+  <button class="delete" mat-raised-button (click)="delete()">
     Suppprimer
   </button>
 </mat-card-actions>
