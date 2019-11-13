@@ -42,7 +42,7 @@ export class TicketService {
     });
   }
 
-  updateTicket(ticket: Ticket): Observable<any> {
+  public updateTicket(ticket: Ticket): Observable<any> {
     return this.wshelper.put(TicketService.URL + `/${ticket.id}`, ticket);
   }
 
