@@ -1,0 +1,23 @@
+
+.presentation-user {
+  padding: 32px 10%;
+  display: flex;
+  background-color: #f99797;
+  color: white;
+}
+
+.user-name {
+  margin-left: 16px;
+}
+
+.text-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  background-color: #ffd64f;
+  color: #3b424e;
+}
