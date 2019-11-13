@@ -23,7 +23,6 @@ export class AuthComponent implements OnInit {
       this.wshelper.setToken(token);
 
       this.userService.getUser().subscribe(() => {
-        console.log(this.userService.user);
         this.router.navigate(['/user']);
       });
     });

@@ -1,4 +1,4 @@
-<header class="presentation-user">
+<header class="presentation-user" *ngIf="user != null" >
   <app-avatar [user]="user"></app-avatar>
   <div class="text-user">
     <div class="user-name">
@@ -14,7 +14,7 @@
     </button>
   </div>
 </header>
-<div class="container">
+<div class="container" *ngIf="user != null">
   <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)"></app-tab>
   <app-ticket-list [tickets]="tickets"></app-ticket-list>
 </div>

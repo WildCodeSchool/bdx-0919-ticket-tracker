@@ -13,7 +13,8 @@ export class UserService {
   getUser() {
     return this.wshelper.get('https://wild-api.witpoc.com/users/me')
                 .pipe(map((decryptedToken: any) => decryptedToken.payload as User),
-                  tap((user: User) => this.user = user)
+                  tap((user: User) => this.user = user),
+                  map ((user) => true)
                   );
   }
 }

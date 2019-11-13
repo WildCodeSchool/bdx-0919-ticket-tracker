@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { WsHelperService } from './ws-helper.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
@@ -10,7 +11,7 @@ export class TicketsGuard implements CanActivate {
 
   private token: string;
 
-  constructor( private wsHelper: WsHelperService, private router: Router) {
+  constructor( private wsHelper: WsHelperService, private router: Router, private userService: UserService) {
     this.token = JSON.parse(localStorage.getItem('TOKEN')) || null;
   }
 
@@ -19,7 +20,7 @@ export class TicketsGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.token != null) {
       this.wsHelper.setToken(this.token);
-      return true;
+      return this.userService.getUser();
   } else {
     return this.router.parseUrl('/home');
   }
