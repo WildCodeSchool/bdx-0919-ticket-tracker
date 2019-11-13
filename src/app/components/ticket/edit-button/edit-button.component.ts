@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Ticket } from "src/app/models/ticket";
 import { TicketService } from "src/app/services/ticket.service";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-edit-button",
@@ -11,8 +12,13 @@ export class EditButtonComponent implements OnInit {
   @Input() ticket: Ticket;
   @Output() getCheckDelete = new EventEmitter<Ticket>();
 
-  constructor(private ticketsService: TicketService) {}
+  constructor(
+    private ticketsService: TicketService,
+    private userService: UserService
+  ) {}
 
+  idUser = this.userService.user.id;
+  
   ngOnInit() {}
 
   delete() {
