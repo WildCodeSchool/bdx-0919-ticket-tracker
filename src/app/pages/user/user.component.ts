@@ -1,11 +1,9 @@
 import { UserService } from './../../services/user.service';
-import { Ticket } from './../../models/ticket';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Ticket } from '../../models/ticket';
+import { Router } from '@angular/router';
 import { User } from './../../models/user';
-import { Component, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { TicketService } from 'src/app/services/ticket.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { TicketService } from '../../services/ticket.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,6 +15,7 @@ export class UserComponent implements OnInit {
   tickets: Ticket[];
   user: User;
 
+
   constructor(
     private ticketService: TicketService,
     private userService: UserService,
@@ -27,10 +26,7 @@ export class UserComponent implements OnInit {
     this.ticketService.getAll().subscribe((tickets) => {
       this.tickets = tickets;
     });
-    this.userService.getUser()
-    .subscribe((user: User) => {
-      this.user = user;
-    });
+    this.user = this.userService.user;
     console.log(this.user);
   }
   deconnection() {

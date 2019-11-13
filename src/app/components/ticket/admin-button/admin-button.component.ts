@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Ticket } from 'src/app/models/ticket';
+import { Ticket } from '../../../models/ticket';
 
 @Component({
   selector: 'app-admin-button',
@@ -8,6 +8,8 @@ import { Ticket } from 'src/app/models/ticket';
 })
 export class AdminButtonComponent implements OnInit {
   @Input() ticket: Ticket;
+
+
   constructor() {}
 
   ngOnInit() {}

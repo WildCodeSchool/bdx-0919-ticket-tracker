@@ -11,6 +11,7 @@ export class TicketListComponent implements OnInit {
   newTicket: Ticket;
   @Input() tickets: Ticket[];
   @Input() user: User;
+
   constructor() {}
 
   ngOnInit() {

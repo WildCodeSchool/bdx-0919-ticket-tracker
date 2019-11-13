@@ -1,7 +1,7 @@
 import { Group } from "./../../models/group";
 import { Ticket } from "src/app/models/ticket";
 import { TicketService } from "./../../services/ticket.service";
-import { Component, OnInit, Injectable } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { NgForm } from "@angular/forms";
 

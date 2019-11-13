@@ -11,6 +11,7 @@ export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
   @Input() user: User;
   @Output() getCheckDelete = new EventEmitter<Ticket>();
+
   tickets: Ticket[];
 
   constructor() {}
