@@ -42,9 +42,9 @@ export class TicketService {
     });
   }
 
-  // updateTicket(id: number): Observable<any> {
-
-  // }
+  updateTicket(ticket: Ticket): Observable<any> {
+    return this.wshelper.put(TicketService.URL + `/${ticket.id}`, ticket);
+  }
 
   deleteTicket(id: number): Observable<any> {
     return this.wshelper.delete(TicketService.URL + `/${id}`);
@@ -65,16 +65,20 @@ export class TicketService {
   }
 
   filterTicketWaiting(): Observable<any> {
-    return this.wshelper.get(TicketService.URL + '?filter=status||eq||waiting');
+    return this.wshelper.get(
+      TicketService.URL + '?filter=status||eq||waiting&sort=createdAt,DESC'
+    );
   }
 
   filterTicketInProgress(): Observable<any> {
     return this.wshelper.get(
-      TicketService.URL + '?filter=status||eq||inProgress'
+      TicketService.URL + '?filter=status||eq||inprogress&sort=createdAt,DESC'
     );
   }
 
   filterTicketDone(): Observable<any> {
-    return this.wshelper.get(TicketService.URL + '?filter=status||eq||done');
+    return this.wshelper.get(
+      TicketService.URL + '?filter=status||eq||terminated&sort=createdAt,DESC'
+    );
   }
 }

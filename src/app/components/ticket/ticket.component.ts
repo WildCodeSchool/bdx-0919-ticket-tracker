@@ -11,6 +11,7 @@ export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
   @Input() user: User;
   @Output() getCheckDelete = new EventEmitter<Ticket>();
+  @Output() getCheckUpdate = new EventEmitter<Ticket>();
 
   tickets: Ticket[];
 
@@ -22,5 +23,9 @@ export class TicketComponent implements OnInit {
 
   onCheckDelete($event) {
     this.getCheckDelete.emit($event);
+  }
+
+  onCheckUpdate($event) {
+    this.getCheckUpdate.emit($event);
   }
 }

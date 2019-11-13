@@ -4,9 +4,10 @@
     <div class="user-name">
       <h2>{{ user.firstname }} {{ user.lastname | uppercase }}</h2>
       <p>Bordeaux - Angular</p>
-      <a (click)='deconnection()'>Déconnexion</a>
+      <a (click)="deconnection()">Déconnexion</a>
     </div>
-    <button [routerLink]="['/form']"
+    <button
+      [routerLink]="['/form']"
       routerLinkActive="router-link-active"
       mat-button
     >
@@ -16,7 +17,11 @@
 </header>
 <div class="container">
   <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)"></app-tab>
-  <app-ticket-list [tickets]="tickets" [user]="user"></app-ticket-list>
+  <app-ticket-list
+    [tickets]="tickets"
+    [user]="user"
+    (getCheckUpdate)="onCheckUpdate()"
+  ></app-ticket-list>
 </div>
 <footer>
   <ul>

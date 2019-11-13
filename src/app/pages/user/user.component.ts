@@ -22,11 +22,22 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit(): any {
-    this.ticketService.getAll().subscribe((tickets) => {
-      this.tickets = tickets;
-    });
     this.user = this.userService.user;
+    if (this.user.role === 'student') {
+      this.ticketService.getAll().subscribe((tickets) => {
+        this.tickets = tickets;
+      });
+    } else {
+      this.ticketService.filterTicketWaiting().subscribe((tickets) => {
+        this.tickets = tickets;
+      });
+    }
   }
+
+  onCheckUpdate() {
+    this.dealWithTabChanged(0);
+  }
+
   deconnection() {
     localStorage.clear();
     this.router.navigate(['/home']);

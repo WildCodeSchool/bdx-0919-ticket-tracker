@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { TicketService } from './../../../services/ticket.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
+import { ThrowStmt } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-button',
@@ -8,17 +11,23 @@ import { Ticket } from '../../../models/ticket';
 })
 export class AdminButtonComponent implements OnInit {
   @Input() ticket: Ticket;
+  @Output() getCheckUpdate = new EventEmitter<Ticket>();
 
-
-  constructor() {}
+  constructor(private ticketService: TicketService, router: Router) {}
 
   ngOnInit() {}
 
   isInProgress() {
-    this.ticket.status = 'inProgress';
+    this.ticket.status = 'inprogress';
+    this.ticketService.updateTicket(this.ticket).subscribe((data: Ticket) => {
+      this.getCheckUpdate.emit(data);
+    });
   }
 
   isDone() {
-    this.ticket.status = 'done';
+    this.ticket.status = 'terminated';
+    this.ticketService.updateTicket(this.ticket).subscribe((data: Ticket) => {
+      this.getCheckUpdate.emit(data);
+    });
   }
 }

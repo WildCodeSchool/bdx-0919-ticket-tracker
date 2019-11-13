@@ -25,6 +25,11 @@ export class WsHelperService {
     return this.http.post(url, data, { headers });
   }
 
+  put(url: string, data: any) {
+    const headers = this.createAuthHeader();
+    return this.http.put(url, data, { headers });
+  }
+
   delete(ressourceUrl: string) {
     const headers = this.createAuthHeader();
     return this.http.delete(ressourceUrl, { headers });
