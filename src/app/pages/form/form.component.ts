@@ -28,10 +28,11 @@ export class FormComponent implements OnInit {
       });
     });
   }
-  editTicket(): void {}
+
   onReset(createTicket: NgForm) {
     createTicket.resetForm();
   }
+
   onFormSubmit(newTicket: Ticket) {
     if (this.ticketType === 'CURSUS') {
       newTicket.group = { id: 178 } as Group;

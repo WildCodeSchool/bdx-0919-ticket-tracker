@@ -26,7 +26,7 @@
 
   <div class="lastLine">
     <div class="creationDate">
-      Crée le {{ ticket.createdAt | date: "medium" }}
+      Crée le {{ ticket.createdAt | date: 'medium' }}
     </div>
     <app-edit-button
       [ticket]="ticket"
@@ -35,8 +35,8 @@
     ></app-edit-button>
     <app-admin-button
       [ticket]="ticket"
-      *ngIf="ticket.user.role === 'administrator'"
-      (getCheckDelete)="onCheckDelete()"
+      *ngIf="user.role === 'administrator'"
+      (getCheckUpdate)="onCheckUpdate()"
     ></app-admin-button>
   </div>
 </mat-card>
