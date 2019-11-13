@@ -9,6 +9,8 @@ import { Ticket } from '../../models/ticket';
 export class TicketListComponent implements OnInit {
   newTicket: Ticket;
   @Input() tickets: Ticket[];
+
+
   constructor() {}
 
   ngOnInit() {

@@ -8,6 +8,8 @@ import { Ticket } from '../../../models/ticket';
 })
 export class AdminButtonComponent implements OnInit {
   @Input() ticket: Ticket;
+
+
   constructor() {}
 
   ngOnInit() {}
