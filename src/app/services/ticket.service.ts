@@ -11,15 +11,16 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TicketService {
+
   static URL = 'https://wild-api.witpoc.com/tickets';
   private token: string;
 
-  // static URL = 'https://wild-api.witpoc.com/tickets-secure';
+  static URL = 'https://wild-api.witpoc.com/tickets-secure';
   constructor(private wshelper: WsHelperService, private userService: UserService) {}
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
-      .get(TicketService.URL)
+      .get(TicketService.URL + `?sort=createdAt,DESC`)
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
@@ -46,13 +47,13 @@ export class TicketService {
 
   filterTicketCursus(id: number): Observable<any> {
     return this.wshelper.get(
-      TicketService.URL + `?filter=group||eq||${id}&join=group`
+      TicketService.URL + `?filter=group||eq||${id}&sort=createdAt,DESC&join=group`
     );
   }
 
   filterTicketSchool(id: number): Observable<any> {
     return this.wshelper.get(
-      TicketService.URL + `?filter=school||eq||${id}&join=school`
+      TicketService.URL + `?filter=school||eq||${id}&sort=createdAt,DESC&join=school`
     );
   }
 }

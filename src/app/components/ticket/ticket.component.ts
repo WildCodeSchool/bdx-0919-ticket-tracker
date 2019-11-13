@@ -1,7 +1,7 @@
-import { Ticket } from 'src/app/models/ticket';
-
+import { Ticket } from './../../models/ticket';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/models/user';
+
 
 @Component({
   selector: 'app-ticket',
@@ -9,14 +9,24 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./ticket.component.scss']
 })
 export class TicketComponent implements OnInit {
+
   @Input() ticket: Ticket;
   @Input() user: User;
 
-  tickets: Ticket[];
+
 
   constructor() {}
+  @Input() ticket: Ticket;
+  @Output() getCheckDelete = new EventEmitter<Ticket>();
+  tickets: Ticket[];
+
+
 
   ngOnInit() {
     return this.ticket;
+  }
+
+  onCheckDelete($event) {
+    this.getCheckDelete.emit($event);
   }
 }

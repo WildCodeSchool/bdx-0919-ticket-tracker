@@ -11,7 +11,9 @@ export class TicketListComponent implements OnInit {
   @Input() tickets: Ticket[];
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    return this.tickets;
+  }
 
   onCheckDelete(indexDanslaList: number) {
     this.tickets.splice(indexDanslaList, 1);

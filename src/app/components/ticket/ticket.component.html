@@ -31,10 +31,12 @@
     <app-edit-button
       [ticket]="ticket"
       *ngIf="ticket.user.role === 'student'"
+      (getCheckDelete)="onCheckDelete()"
     ></app-edit-button>
     <app-admin-button
       [ticket]="ticket"
       *ngIf="ticket.user.role === 'administrator'"
+      (getCheckDelete)="onCheckDelete()"
     ></app-admin-button>
   </div>
 </mat-card>
