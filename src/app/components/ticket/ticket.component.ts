@@ -10,12 +10,16 @@ import { User } from "src/app/models/user";
 export class TicketComponent implements OnInit {
   @Input() ticket: Ticket;
   @Input() user: User;
-
+  @Output() getCheckDelete = new EventEmitter<Ticket>();
   tickets: Ticket[];
 
   constructor() {}
 
   ngOnInit() {
     return this.ticket;
+  }
+
+  onCheckDelete($event) {
+    this.getCheckDelete.emit($event);
   }
 }
