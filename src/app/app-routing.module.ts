@@ -9,8 +9,8 @@ import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent, canActivate: [TicketsGuard]},
-  { path: 'auth/:token', component: AuthComponent, canActivate: [TicketsGuard] },
+  { path: 'home', component: HomeComponent},
+  { path: 'auth/:token', component: AuthComponent},
   { path: 'user', component: UserComponent, canActivate: [TicketsGuard] },
   { path: 'form', component: FormComponent, canActivate: [TicketsGuard] },
   { path: 'edit/:id', component: FormComponent, canActivate: [TicketsGuard] }
