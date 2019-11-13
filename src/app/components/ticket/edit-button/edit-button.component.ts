@@ -21,8 +21,6 @@ export class EditButtonComponent implements OnInit {
 
   ngOnInit() {}
 
-  editTicket() {}
-
   delete() {
     this.ticketsService
       .deleteTicket(this.ticket.id)

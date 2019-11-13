@@ -28,7 +28,6 @@ export class FormComponent implements OnInit {
       });
     });
   }
-  editTicket(): void {}
 
   onReset(createTicket: NgForm) {
     createTicket.resetForm();
