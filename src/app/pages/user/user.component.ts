@@ -15,11 +15,10 @@ export class UserComponent implements OnInit {
   tickets: Ticket[];
   user: User;
 
-
   constructor(
     private ticketService: TicketService,
     private userService: UserService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): any {
@@ -27,7 +26,6 @@ export class UserComponent implements OnInit {
       this.tickets = tickets;
     });
     this.user = this.userService.user;
-    console.log(this.user);
   }
   deconnection() {
     localStorage.clear();
@@ -36,12 +34,22 @@ export class UserComponent implements OnInit {
 
   dealWithTabChanged(index) {
     let serverRequest$: Observable<Ticket[]>;
-    if (index === 0) {
-      serverRequest$ = this.ticketService.getAll();
-    } else if (index === 1) {
-      serverRequest$ = this.ticketService.filterTicketCursus(178);
-    } else if (index === 2) {
-      serverRequest$ = this.ticketService.filterTicketSchool(5);
+    if (this.user.role === 'student') {
+      if (index === 0) {
+        serverRequest$ = this.ticketService.getAll();
+      } else if (index === 1) {
+        serverRequest$ = this.ticketService.filterTicketCursus(178);
+      } else if (index === 2) {
+        serverRequest$ = this.ticketService.filterTicketSchool(5);
+      }
+    } else {
+      if (index === 0) {
+        serverRequest$ = this.ticketService.filterTicketWaiting();
+      } else if (index === 1) {
+        serverRequest$ = this.ticketService.filterTicketInProgress();
+      } else if (index === 2) {
+        serverRequest$ = this.ticketService.filterTicketDone();
+      }
     }
     serverRequest$.subscribe((ticketsFromServer: Ticket[]) => {
       this.tickets = ticketsFromServer;

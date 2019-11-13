@@ -1,12 +1,12 @@
-import { UserService } from "./user.service";
-import { WsHelperService } from "./ws-helper.service";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Ticket } from "../models/ticket";
-import { map } from "rxjs/operators";
+import { UserService } from './user.service';
+import { WsHelperService } from './ws-helper.service';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Ticket } from '../models/ticket';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class TicketService {
   constructor(
@@ -14,7 +14,7 @@ export class TicketService {
     private userService: UserService
   ) {}
 
-  static URL = "https://wild-api.witpoc.com/tickets-secure";
+  static URL = 'https://wild-api.witpoc.com/tickets-secure';
 
   // static URL = 'https://wild-api.witpoc.com/tickets';
   private token: string;
@@ -27,7 +27,7 @@ export class TicketService {
 
   public getById(id: number): Observable<any> {
     return this.wshelper
-      .get(TicketService.URL + "/" + id)
+      .get(TicketService.URL + '/' + id)
       .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
@@ -37,10 +37,14 @@ export class TicketService {
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    return tickets.map(ticket => {
+    return tickets.map((ticket) => {
       return new Ticket(ticket);
     });
   }
+
+  // updateTicket(id: number): Observable<any> {
+
+  // }
 
   deleteTicket(id: number): Observable<any> {
     return this.wshelper.delete(TicketService.URL + `/${id}`);
@@ -58,5 +62,19 @@ export class TicketService {
       TicketService.URL +
         `?filter=school||eq||${id}&sort=createdAt,DESC&join=school`
     );
+  }
+
+  filterTicketWaiting(): Observable<any> {
+    return this.wshelper.get(TicketService.URL + '?filter=status||eq||waiting');
+  }
+
+  filterTicketInProgress(): Observable<any> {
+    return this.wshelper.get(
+      TicketService.URL + '?filter=status||eq||inProgress'
+    );
+  }
+
+  filterTicketDone(): Observable<any> {
+    return this.wshelper.get(TicketService.URL + '?filter=status||eq||done');
   }
 }
