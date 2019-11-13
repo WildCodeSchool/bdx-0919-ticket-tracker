@@ -1,6 +1,6 @@
 import { Ticket } from './../../models/ticket';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { User } from 'src/app/models/user';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -12,12 +12,12 @@ export class TicketComponent implements OnInit {
 
   @Input() ticket: Ticket;
   @Input() user: User;
-
+  @Output() getCheckDelete = new EventEmitter<Ticket>();
 
 
   constructor() {}
-  @Input() ticket: Ticket;
-  @Output() getCheckDelete = new EventEmitter<Ticket>();
+
+
   tickets: Ticket[];
 
 

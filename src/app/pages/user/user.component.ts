@@ -1,11 +1,9 @@
 import { UserService } from './../../services/user.service';
-import { Ticket } from './../../models/ticket';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Ticket } from '../../models/ticket';
+import { Router } from '@angular/router';
 import { User } from './../../models/user';
-import { Component, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { TicketService } from 'src/app/services/ticket.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { TicketService } from '../../services/ticket.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,6 +14,7 @@ import { Observable } from 'rxjs';
 export class UserComponent implements OnInit {
   tickets: Ticket[];
   user: User;
+
 
   constructor(
     private ticketService: TicketService,
