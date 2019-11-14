@@ -25,8 +25,10 @@ export class FormComponent implements OnInit {
       this.newTicket.id = parseInt(params.get('id'));
       this.ticketService.getById(this.newTicket.id).subscribe((ticket) => {
         this.newTicket = ticket;
+
       });
     });
+    this.ticketService.formButton = false;
   }
 
   onReset(createTicket: NgForm) {

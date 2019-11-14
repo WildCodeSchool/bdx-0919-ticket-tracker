@@ -10,7 +10,7 @@
       [routerLink]="['/form']"
       routerLinkActive="router-link-active"
       mat-button
-      *ngIf="user.role === 'student'"
+      *ngIf="user.role === 'student' && formButton === true"
     >
       Créer un ticket
     </button>

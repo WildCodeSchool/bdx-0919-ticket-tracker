@@ -1,4 +1,4 @@
-<mat-card-actions class="btn">
+<mat-card-actions class="btn" *ngIf="adminButton === true">
   <button mat-raised-button
   class="orange-color"
   (click)="isInProgress()"

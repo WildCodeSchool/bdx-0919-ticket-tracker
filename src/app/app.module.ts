@@ -1,3 +1,5 @@
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { AdminButtonComponent } from './components/ticket/admin-button/admin-button.component';
 import { EditButtonComponent } from './components/ticket/edit-button/edit-button.component';
 import { FormsModule } from '@angular/forms';
@@ -24,8 +26,6 @@ import { FormComponent } from './pages/form/form.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { HeaderComponent } from './pages/user/header/header.component';
-import { FooterComponent } from './pages/user/footer/footer.component';
 
 @NgModule({
   declarations: [
