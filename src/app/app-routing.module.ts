@@ -3,7 +3,7 @@ import { TicketsGuard } from './services/tickets.guard';
 import { AuthComponent } from './pages/auth/auth.component';
 import { NgModule } from '@angular/core';
 import { FormComponent } from './pages/form/form.component';
-import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 
 

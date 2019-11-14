@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { UserService } from './user.service';
 import { WsHelperService } from './ws-helper.service';
 import { Injectable } from '@angular/core';
@@ -21,7 +22,7 @@ export class TicketService {
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
-      .get(TicketService.URL + '?filter=status||eq||terminated&sort=createdAt,DESC')
+      .get(TicketService.URL + `?filter=status||eq||terminated&filter=user||eq||${this.userService.user.id}&sort=createdAt,DESC`)
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
