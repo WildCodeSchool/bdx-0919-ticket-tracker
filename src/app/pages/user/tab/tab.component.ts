@@ -18,10 +18,15 @@ export class TabComponent implements OnInit {
     'Tickets administration',
     'Historique',
   ];
-  private adminList = ['En attente', 'En cours', 'Traités'];
+  private adminList = [
+    'En attente',
+    'En cours',
+    'Traités'
+  ];
+
   selectedList: string[];
   indexClicked = 0;
-  response;
+  response: any;
   constructor() {}
 
   ngOnInit() {
@@ -34,7 +39,7 @@ export class TabComponent implements OnInit {
     }
   }
 
-  defineIndex(index) {
+  defineIndex(index: number) {
     this.indexClicked = index;
     this.tabChanged.emit(index);
   }

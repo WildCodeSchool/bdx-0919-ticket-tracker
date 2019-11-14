@@ -1,4 +1,4 @@
-<mat-card-actions class="button" *ngIf="ticket.user.id === idUser">
+<mat-card-actions class="button" *ngIf="ticket.user.id === idUser &&  studentButton === true">
   <button
     routerLink="/edit/{{ ticket.id }}"
     routerLinkActive="router-link-active"

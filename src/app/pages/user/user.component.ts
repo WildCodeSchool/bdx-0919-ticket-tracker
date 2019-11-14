@@ -46,10 +46,13 @@ export class UserComponent implements OnInit {
     if (this.user.role === 'student') {
       if (index === 0) {
         serverRequest$ = this.ticketService.filterTicketCursus();
+        this.ticketService.studentButton = true;
       } else if (index === 1) {
         serverRequest$ = this.ticketService.filterTicketSchool();
+        this.ticketService.studentButton = true;
       } else if (index === 2) {
         serverRequest$ = this.ticketService.getAll();
+        this.ticketService.studentButton = false;
       }
     } else {
       if (index === 0) {
