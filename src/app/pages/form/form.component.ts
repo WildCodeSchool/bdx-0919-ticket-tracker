@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { group } from '@angular/animations';
 
 @Component({
   selector: 'app-form',
@@ -27,9 +28,9 @@ export class FormComponent implements OnInit {
       this.ticketService.getById(this.newTicket.id).subscribe(ticket => {
         this.newTicket = ticket;
         if (this.newTicket.group) {
-          this.ticketType === 'CURSUS';
+          this.ticketType = 'CURSUS';
         } else {
-          this.ticketType === 'SCHOOL';
+          this.ticketType = 'SCHOOL';
         }
       });
     });
@@ -52,7 +53,6 @@ export class FormComponent implements OnInit {
 
   onUpdateTicket(newTicket: Ticket) {
     this.ticketService.updateTicket(this.newTicket).subscribe();
-
     this.router.navigate(['/user']);
   }
 

@@ -15,6 +15,7 @@ export class TicketService {
   ) {}
 
   static URL = 'https://wild-api.witpoc.com/tickets-secure';
+  static editURL = 'https://wild-api.witpoc.com/tickets-secure/ticket/';
 
   // static URL = 'https://wild-api.witpoc.com/tickets';
   private token: string;
@@ -27,7 +28,7 @@ export class TicketService {
 
   public getById(id: number): Observable<any> {
     return this.wshelper
-      .get(TicketService.URL + '/' + id)
+      .get(TicketService.editURL + id)
       .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
