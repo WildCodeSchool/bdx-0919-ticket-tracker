@@ -1,7 +1,7 @@
 import { TicketService } from './../../../services/ticket.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
-import { ThrowStmt } from '@angular/compiler';
+
 import { Router } from '@angular/router';
 
 @Component({

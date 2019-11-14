@@ -1,4 +1,3 @@
-import { User } from './../models/user';
 import { UserService } from './user.service';
 import { WsHelperService } from './ws-helper.service';
 import { Injectable } from '@angular/core';
