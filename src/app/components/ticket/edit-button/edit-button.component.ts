@@ -12,7 +12,6 @@ export class EditButtonComponent implements OnInit {
   @Input() ticket: Ticket;
   @Output() getCheckDelete = new EventEmitter<Ticket>();
 
-
   constructor(
     private ticketsService: TicketService,
     private userService: UserService

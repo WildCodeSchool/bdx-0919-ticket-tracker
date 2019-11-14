@@ -15,6 +15,9 @@ export class TicketService {
   ) {}
 
   static URL = 'https://wild-api.witpoc.com/tickets-secure';
+
+  static editURL = 'https://wild-api.witpoc.com/tickets-secure/ticket/';
+
   formButton: boolean;
   adminButton: boolean;
   studentButton: boolean;
@@ -24,13 +27,16 @@ export class TicketService {
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
-      .get(TicketService.URL + `?filter=status||eq||terminated&filter=user||eq||${this.userService.user.id}&sort=createdAt,DESC`)
+      .get(
+        TicketService.URL +
+          `?filter=status||eq||terminated&filter=user||eq||${this.userService.user.id}&sort=createdAt,DESC`
+      )
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
   public getById(id: number): Observable<any> {
     return this.wshelper
-      .get(TicketService.URL + '/' + id)
+      .get(TicketService.editURL + id)
       .pipe(map((ticket: Ticket) => new Ticket(ticket)));
   }
 
@@ -40,7 +46,7 @@ export class TicketService {
   }
 
   private convertDataFromServerToTickets(tickets: any[]): Ticket[] {
-    return tickets.map((ticket) => {
+    return tickets.map(ticket => {
       return new Ticket(ticket);
     });
   }
@@ -85,4 +91,3 @@ export class TicketService {
     );
   }
 }
-
