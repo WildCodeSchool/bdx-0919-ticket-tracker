@@ -39,9 +39,7 @@ export class UserComponent implements OnInit {
     this.dealWithTabChanged(0);
   }
 
-
-
-  dealWithTabChanged(index) {
+  dealWithTabChanged(index: number) {
     let serverRequest$: Observable<Ticket[]>;
     if (this.user.role === 'student') {
       if (index === 0) {

@@ -1,9 +1,8 @@
-import { TicketService } from './../../../services/ticket.service';
+import { TicketService } from '../../services/ticket.service';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
 
 @Component({
   selector: 'app-header',
