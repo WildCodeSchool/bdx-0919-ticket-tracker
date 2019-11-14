@@ -1,7 +1,7 @@
 import { User } from './../../models/user';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Ticket } from 'src/app/models/ticket';
-import { tick } from '@angular/core/testing';
+
 
 @Component({
   selector: 'app-ticket-list',
@@ -19,11 +19,9 @@ export class TicketListComponent implements OnInit {
   ngOnInit() {
     return this.tickets;
   }
-
   onCheckDelete(indexDanslaList: number) {
     this.tickets.splice(indexDanslaList, 1);
   }
-
   onCheckUpdate($event) {
     this.getCheckUpdate.emit($event);
   }
