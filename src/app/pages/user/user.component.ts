@@ -22,6 +22,7 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit(): any {
+
     this.user = this.userService.user;
     if (this.user.role === 'student') {
       this.ticketService.getAll().subscribe((tickets) => {
@@ -33,6 +34,7 @@ export class UserComponent implements OnInit {
       });
     }
     this.ticketService.formButton = true;
+    this.ticketService.adminButton = true;
   }
 
   onCheckUpdate() {
@@ -52,10 +54,13 @@ export class UserComponent implements OnInit {
     } else {
       if (index === 0) {
         serverRequest$ = this.ticketService.filterTicketWaiting();
+        this.ticketService.adminButton = true;
       } else if (index === 1) {
         serverRequest$ = this.ticketService.filterTicketInProgress();
+        this.ticketService.adminButton = true;
       } else if (index === 2) {
         serverRequest$ = this.ticketService.filterTicketDone();
+        this.ticketService.adminButton = false;
       }
     }
     serverRequest$.subscribe((ticketsFromServer: Ticket[]) => {

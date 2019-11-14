@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class AdminButtonComponent implements OnInit {
   @Input() ticket: Ticket;
   @Output() getCheckUpdate = new EventEmitter<Ticket>();
-
+  adminButton = this.ticketService.adminButton;
   constructor(private ticketService: TicketService, router: Router) {}
 
   ngOnInit() {}
