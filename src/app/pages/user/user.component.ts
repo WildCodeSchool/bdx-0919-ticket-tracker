@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
 
     this.user = this.userService.user;
     if (this.user.role === 'student') {
-      this.ticketService.getAll().subscribe((tickets) => {
+      this.ticketService.filterTicketCursus().subscribe((tickets) => {
         this.tickets = tickets;
       });
     } else {
