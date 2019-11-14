@@ -38,10 +38,7 @@ export class UserComponent implements OnInit {
     this.dealWithTabChanged(0);
   }
 
-  deconnection() {
-    localStorage.clear();
-    this.router.navigate(['/home']);
-  }
+
 
   dealWithTabChanged(index) {
     let serverRequest$: Observable<Ticket[]>;

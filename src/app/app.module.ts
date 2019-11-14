@@ -17,13 +17,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './pages/user/user.component';
-import { AvatarComponent } from './pages/user/avatar/avatar.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 import { TabComponent } from './pages/user/tab/tab.component';
 import { TicketListComponent } from './components/ticket-list/ticket-list.component';
 import { FormComponent } from './pages/form/form.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { HeaderComponent } from './pages/user/header/header.component';
+import { FooterComponent } from './pages/user/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     TicketComponent,
     AuthComponent,
     EditButtonComponent,
-    AdminButtonComponent
+    AdminButtonComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+
+
+footer {
+  width: 100%;
+  background-color: white;
+  padding: 4px 0;
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer li {
+  list-style: none;
+  color: grey;
+  margin: 0 16px 0 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: grey;
+}
+
+footer a:hover {
+  color: #3b424e;
+}
+
+.fa-heart {
+  color: #f76c6c;
+}
+
+a:hover{
+ opacity:0.5;
+}
