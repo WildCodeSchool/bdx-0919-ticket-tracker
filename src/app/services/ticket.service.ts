@@ -16,6 +16,7 @@ export class TicketService {
   ) {}
 
   static URL = 'https://wild-api.witpoc.com/tickets-secure';
+  formButton: boolean;
 
   // static URL = 'https://wild-api.witpoc.com/tickets';
   private token: string;
