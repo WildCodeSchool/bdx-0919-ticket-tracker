@@ -22,9 +22,10 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit(): any {
+
     this.user = this.userService.user;
     if (this.user.role === 'student') {
-      this.ticketService.getAll().subscribe((tickets) => {
+      this.ticketService.filterTicketCursus().subscribe((tickets) => {
         this.tickets = tickets;
       });
     } else {
@@ -32,34 +33,37 @@ export class UserComponent implements OnInit {
         this.tickets = tickets;
       });
     }
+    this.ticketService.formButton = true;
+    this.ticketService.adminButton = true;
   }
 
   onCheckUpdate() {
     this.dealWithTabChanged(0);
   }
 
-  deconnection() {
-    localStorage.clear();
-    this.router.navigate(['/home']);
-  }
-
-  dealWithTabChanged(index) {
+  dealWithTabChanged(index: number) {
     let serverRequest$: Observable<Ticket[]>;
     if (this.user.role === 'student') {
       if (index === 0) {
-        serverRequest$ = this.ticketService.getAll();
+        serverRequest$ = this.ticketService.filterTicketCursus();
+        this.ticketService.studentButton = true;
       } else if (index === 1) {
-        serverRequest$ = this.ticketService.filterTicketCursus(178);
+        serverRequest$ = this.ticketService.filterTicketSchool();
+        this.ticketService.studentButton = true;
       } else if (index === 2) {
-        serverRequest$ = this.ticketService.filterTicketSchool(5);
+        serverRequest$ = this.ticketService.getAll();
+        this.ticketService.studentButton = false;
       }
     } else {
       if (index === 0) {
         serverRequest$ = this.ticketService.filterTicketWaiting();
+        this.ticketService.adminButton = true;
       } else if (index === 1) {
         serverRequest$ = this.ticketService.filterTicketInProgress();
+        this.ticketService.adminButton = true;
       } else if (index === 2) {
         serverRequest$ = this.ticketService.filterTicketDone();
+        this.ticketService.adminButton = false;
       }
     }
     serverRequest$.subscribe((ticketsFromServer: Ticket[]) => {

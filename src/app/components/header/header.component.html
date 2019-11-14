@@ -1,0 +1,18 @@
+<header class="presentation-user" *ngIf="user != null">
+  <app-avatar [user]="user"></app-avatar>
+  <div class="text-user">
+    <div class="user-name">
+      <h2>{{ user.firstname }} {{ user.lastname | uppercase }}</h2>
+      <p>Bordeaux - Angular</p>
+      <a (click)="deconnection()">Déconnexion</a>
+    </div>
+    <button class='formBtn'
+      [routerLink]="['/form']"
+      routerLinkActive="router-link-active"
+      mat-button
+      *ngIf="user.role === 'student' && formButton === true"
+    >
+      Créer un ticket
+    </button>
+  </div>
+</header>

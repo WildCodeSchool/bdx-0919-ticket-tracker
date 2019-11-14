@@ -34,6 +34,7 @@ export class FormComponent implements OnInit {
         }
       });
     });
+    this.ticketService.formButton = false;
   }
 
   onReset(createTicket: NgForm) {
@@ -43,8 +44,10 @@ export class FormComponent implements OnInit {
   onFormSubmit(newTicket: Ticket) {
     if (this.ticketType === 'CURSUS') {
       this.newTicket.group = { id: 178 } as Group;
+      this.newTicket.school = null;
     } else {
       this.newTicket.school = { id: 5 };
+      this.newTicket.group = null;
     }
     this.ticketService.createTicket(this.newTicket).subscribe(() => {
       this.router.navigate(['/user']);

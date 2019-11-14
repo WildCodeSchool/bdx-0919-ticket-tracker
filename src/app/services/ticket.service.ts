@@ -15,14 +15,22 @@ export class TicketService {
   ) {}
 
   static URL = 'https://wild-api.witpoc.com/tickets-secure';
+
   static editURL = 'https://wild-api.witpoc.com/tickets-secure/ticket/';
+
+  formButton: boolean;
+  adminButton: boolean;
+  studentButton: boolean;
 
   // static URL = 'https://wild-api.witpoc.com/tickets';
   private token: string;
 
   public getAll(): Observable<Ticket[]> {
     return this.wshelper
-      .get(TicketService.URL + `?sort=createdAt,DESC`)
+      .get(
+        TicketService.URL +
+          `?filter=status||eq||terminated&filter=user||eq||${this.userService.user.id}&sort=createdAt,DESC`
+      )
       .pipe(map(this.convertDataFromServerToTickets));
   }
 
@@ -51,17 +59,17 @@ export class TicketService {
     return this.wshelper.delete(TicketService.URL + `/${id}`);
   }
 
-  filterTicketCursus(id: number): Observable<any> {
+  filterTicketCursus(): Observable<any> {
     return this.wshelper.get(
       TicketService.URL +
-        `?filter=group||eq||${id}&sort=createdAt,DESC&join=group`
+        `?filter=status||in||waiting,inprogress&sort=createdAt,DESC&join=group`
     );
   }
 
-  filterTicketSchool(id: number): Observable<any> {
+  filterTicketSchool(): Observable<any> {
     return this.wshelper.get(
       TicketService.URL +
-        `?filter=school||eq||${id}&sort=createdAt,DESC&join=school`
+        `?filter=status||in||waiting,inprogress&sort=createdAt,DESC&join=school`
     );
   }
 

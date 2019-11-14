@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <form
   #createTicket="ngForm"
   (ngSubmit)="createTicket.valid && onFormSubmit(newTicket)"
@@ -93,9 +95,11 @@
         Modifier
       </button>
 
-      <button mat-flat-button *ngIf="!newTicket.id">
+      <button mat-flat-button  *ngIf="!newTicket.id">
         Créer
       </button>
     </div>
   </div>
 </form>
+
+<app-footer></app-footer>
