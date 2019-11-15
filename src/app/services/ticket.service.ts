@@ -62,26 +62,26 @@ export class TicketService {
   filterTicketCursus(): Observable<any> {
     return this.wshelper.get(
       TicketService.URL +
-        `?filter=status||in||waiting,inprogress&sort=createdAt,DESC&join=group`
+        `?filter=status||in||waiting,inprogress&join=group`
     );
   }
 
   filterTicketSchool(): Observable<any> {
     return this.wshelper.get(
       TicketService.URL +
-        `?filter=status||in||waiting,inprogress&sort=createdAt,DESC&join=school`
+        `?filter=status||in||waiting,inprogress,DESC&join=school`
     );
   }
 
   filterTicketWaiting(): Observable<any> {
     return this.wshelper.get(
-      TicketService.URL + '?filter=status||eq||waiting&sort=createdAt,DESC'
+      TicketService.URL + '?filter=status||eq||waiting'
     );
   }
 
   filterTicketInProgress(): Observable<any> {
     return this.wshelper.get(
-      TicketService.URL + '?filter=status||eq||inprogress&sort=createdAt,DESC'
+      TicketService.URL + '?filter=status||eq||inprogress'
     );
   }
 
