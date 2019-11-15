@@ -1,13 +1,12 @@
-<div class="container">
-  <div class="presentation-user">
-    <app-avatar [user]="mary"></app-avatar>
-    <div class="text-user">
-      <h2 class="user-name">
-        {{ mary.firstName }} {{ mary.lastName | uppercase }}
-      </h2>
-      <button [routerLink]="['/form']" routerLinkActive="router-link-active"  mat-button>Créer un ticket</button>
-    </div>
-  </div>
-  <app-tab [user]="mary"></app-tab>
-  <app-ticket-list></app-ticket-list>
+<app-header></app-header>
+
+<div class="container" *ngIf="user != null">
+  <app-tab [user]="user" (tabChanged)="dealWithTabChanged($event)"></app-tab>
+  <app-ticket-list
+    [tickets]="tickets"
+    [user]="user"
+    (getCheckUpdate)="onCheckUpdate()"
+  ></app-ticket-list>
 </div>
+
+<app-footer></app-footer>

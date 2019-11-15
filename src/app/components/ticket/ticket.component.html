@@ -1,25 +1,44 @@
-<mat-card class="example-card card-color">
+<mat-card class="ticket-card">
   <mat-card-header class="header">
-    <div mat-card-avatar class="avatar"></div>
+    <img
+      [src]="
+        'https://avatars.githubusercontent.com/' + ticket.user.github + '?s=56'
+      "
+      alt="picture of the ticket owner"
+      class="avatar"
+    />
     <div class="name-cercle">
       <div class="name">
-        <div mat-card-title class>John</div>
-        <mat-card-subtitle>Lennon</mat-card-subtitle>
+        <div mat-card-title class>{{ ticket.user.firstname }}</div>
+        <mat-card-subtitle>{{ ticket.user.lastname }}</mat-card-subtitle>
       </div>
-      <div class="cercle"></div>
+      <mat-card-content class="content">
+        <div class="ticket-title">
+          <h4>{{ ticket.title }}</h4>
+        </div>
+        <p>
+          {{ ticket.description }}
+        </p>
+      </mat-card-content>
+      <div class="status-circle {{ ticket.status }} "></div>
     </div>
   </mat-card-header>
 
-  <mat-card-content class="content">
-    <p>
-      {{ ticket.description }}
-    </p>
-  </mat-card-content>
   <div class="lastLine">
-    <div class="creationDate">{{ ticket.createdAt | date }}</div>
-    <mat-card-actions class="button">
-      <button class="Edit" mat-button>Editer</button>
-      <button class="Delete" mat-button>Suppprimer</button>
-    </mat-card-actions>
+    <div class="creationDate">
+      Crée le {{ ticket.createdAt | date: 'medium' }}
+    </div>
+    <app-edit-button
+      [ticket]="ticket"
+      *ngIf="ticket.user.role === 'student'"
+      (getCheckDelete)="onCheckDelete()"
+    ></app-edit-button>
+    <app-admin-button
+      [ticket]="ticket"
+      *ngIf="user.role === 'administrator'"
+      (getCheckUpdate)="onCheckUpdate()"
+    ></app-admin-button>
   </div>
 </mat-card>
+
+<div class="test-card"></div>

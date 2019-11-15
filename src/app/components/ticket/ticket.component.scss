@@ -1,11 +1,8 @@
-.example-card {
-  width: 1000px;
-  max-width: 1000px;
+.ticket-card {
+  width: 60%;
   text-align: center;
-
   margin: auto;
-  margin-top: 10%;
-
+  margin-top: 3%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -13,15 +10,13 @@
   -o-border-radius: 10px;
 
   box-shadow: 6px 6px 6px #c8c8c8;
-}
-
-.card-color {
   background-color: white;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  color: #616060;
 }
 
 .name {
@@ -36,34 +31,41 @@
 }
 
 .avatar {
-  background-image: url("https://images.unsplash.com/photo-1518693800412-ad92111a1d46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 4px;
 }
 
 .content {
-  display: flex;
+  width: 70%;
+  margin: 0 auto;
   font-family: Raleway Regular;
-  justify-content: center;
+  color: #663e3e;
 }
 
-.cercle {
+h4 {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.status-circle {
   width: 15px;
   height: 15px;
   border-radius: 20px;
+}
+
+.terminated {
   background: rgb(1, 97, 1);
 }
 
-.button {
-  display: flex;
-  color: #f99797;
-  margin-bottom: -15px;
+.inprogress {
+  background: orange;
 }
 
-.Edit,
-.Delete {
-  font-size: small;
+.waiting {
+  background: red;
 }
 
 .lastLine {

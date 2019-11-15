@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { TicketService } from './ticket.service';
 
-describe('TicketService', () => {
+import { WsHelperService } from './ws-helper.service';
+
+describe('WsHelperService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TicketService = TestBed.get(TicketService);
+    const service: WsHelperService = TestBed.get(WsHelperService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,0 +1,14 @@
+<mat-card-actions class="button" *ngIf="ticket.user.id === idUser &&  studentButton === true">
+  <button
+    routerLink="/edit/{{ ticket.id + '?join=school&join=groups' }}"
+    routerLinkActive="router-link-active"
+    class="edit"
+    mat-raised-button
+  >
+    Editer
+  </button>
+
+  <button class="delete" mat-raised-button (click)="delete()">
+    Suppprimer
+  </button>
+</mat-card-actions>

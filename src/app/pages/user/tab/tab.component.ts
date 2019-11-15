@@ -1,5 +1,5 @@
-
-import {Component, OnInit, Input} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Ticket } from './../../../models/ticket';
 import { User } from './../../../models/user';
 
 @Component({
@@ -9,33 +9,38 @@ import { User } from './../../../models/user';
 })
 export class TabComponent implements OnInit {
   @Input() user: User;
-  userList = ['Tous les tickets', 'Tickets cursus', 'Tickets administration'];
-  adminList = ['En attente', 'En cours', 'Traités'];
+  tickets: Ticket[];
+
+  @Output() tabChanged = new EventEmitter<number>();
+
+  private userList = [
+    'Tickets cursus',
+    'Tickets administration',
+    'Historique',
+  ];
+  private adminList = [
+    'En attente',
+    'En cours',
+    'Traités'
+  ];
+
+  selectedList: string[];
+  indexClicked = 0;
+  response: any;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
 
-  firstTab() {
-    if (this.user.status === 'student') {
-      return this.userList[0];
+
+    if (this.user.role === 'student') {
+      this.selectedList = this.userList;
     } else {
-      return this.adminList[0];
+      this.selectedList = this.adminList;
     }
   }
 
-  secondTab() {
-    if (this.user.status === 'student') {
-      return this.userList[1];
-    } else {
-      return this.adminList[1];
-    }
-  }
-
-  thirdTab() {
-    if (this.user.status === 'student') {
-      return this.userList[2];
-    } else {
-      return this.adminList[2];
-    }
+  defineIndex(index: number) {
+    this.indexClicked = index;
+    this.tabChanged.emit(index);
   }
 }
