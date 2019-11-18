@@ -2,9 +2,9 @@
 FROM node:12.13.0 as builder
 RUN mkdir /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
-RUN npm install
 COPY . /usr/src/app
 WORKDIR /usr/src/app
+RUN npm install
 RUN npm run build:opti
 
 # production environment
