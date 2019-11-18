@@ -22,7 +22,7 @@ export class TicketListComponent implements OnInit {
   onCheckDelete(indexDanslaList: number) {
     this.tickets.splice(indexDanslaList, 1);
   }
-  onCheckUpdate($event) {
-    this.getCheckUpdate.emit($event);
+  onCheckUpdate() {
+    this.getCheckUpdate.emit();
   }
 }

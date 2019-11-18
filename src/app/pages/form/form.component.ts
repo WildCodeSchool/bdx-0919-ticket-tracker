@@ -37,7 +37,7 @@ export class FormComponent implements OnInit {
     this.ticketService.formButton = false;
   }
 
-  onReset(createTicket: NgForm) {
+  onReset(createTicket?: NgForm) {
     createTicket.resetForm();
   }
 
@@ -54,7 +54,7 @@ export class FormComponent implements OnInit {
     });
   }
 
-  onUpdateTicket(newTicket: Ticket) {
+  onUpdateTicket() {
     this.ticketService.updateTicket(this.newTicket).subscribe();
     this.router.navigate(['/user']);
   }

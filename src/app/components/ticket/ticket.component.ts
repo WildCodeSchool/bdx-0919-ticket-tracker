@@ -21,11 +21,11 @@ export class TicketComponent implements OnInit {
     return this.ticket;
   }
 
-  onCheckDelete($event) {
-    this.getCheckDelete.emit($event);
+  onCheckDelete() {
+    this.getCheckDelete.emit();
   }
 
-  onCheckUpdate($event) {
-    this.getCheckUpdate.emit($event);
+  onCheckUpdate() {
+    this.getCheckUpdate.emit();
   }
 }
