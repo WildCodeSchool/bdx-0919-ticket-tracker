@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod",
-    "build:opti": "node --max_old_space_size=2000 ./node_modules/@angular/cli/bin/ng build",
+    "build:opti": "node --max_old_space_size=800 ./node_modules/@angular/cli/bin/ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
