@@ -1,11 +1,9 @@
-import { Group } from './../../models/group';
-import { Ticket } from 'src/app/models/ticket';
-import { TicketService } from './../../services/ticket.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { NgIf } from '@angular/common';
-import { group } from '@angular/animations';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Ticket } from 'src/app/models/ticket';
+import { Group } from './../../models/group';
+import { TicketService } from './../../services/ticket.service';
 
 @Component({
   selector: 'app-form',
