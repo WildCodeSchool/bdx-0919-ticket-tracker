@@ -8,6 +8,7 @@
     "build:prod": "ng build --prod",
     "build:opti": "node --max_old_space_size=900 ./node_modules/@angular/cli/bin/ng build",
     "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": " copyfiles --flat .githooks/* .git/hooks/",
